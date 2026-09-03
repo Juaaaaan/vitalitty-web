@@ -6,26 +6,19 @@
 
 ### 1. Teléfonos reales de la clínica
 
-**Decision**: PENDING — Requiere confirmación del cliente
+**Decision**: RESOLVED — `690071950`
 
-**Context**: El Wix actual muestra `657.423.574` pero enlaza a `tel:690071950`. Hay que confirmar:
-- Teléfono de nutrición (Jesús García)
-- Teléfono de fisioterapia (Rubén Horcajo)
-- Teléfono general de la clínica (si existe)
+**Context**: El Wix actual muestra `657.423.574` pero enlaza a `tel:690071950`. Confirmado: usar `690071950`.
 
-**Workaround**: Usar el número mostrado en texto (`657 423 574`) como placeholder y marcar con `TODO` en el código. Antes de deploy a producción, el cliente confirma.
-
-**Rationale**: Mejor mostrar el número visible (que el usuario ya ve en Wix) que el del enlace (que podría ser erróneo).
+**Rationale**: Valor confirmado por el cliente.
 
 ### 2. Email de contacto definitivo
 
-**Decision**: PENDING — Requiere confirmación del cliente
+**Decision**: RESOLVED — `info@vitalitty.es`
 
-**Context**: El Wix tiene `info@vitalitty.com` y `info@mysite.com` en los `mailto:`, mientras el texto dice `info@vitalitty.es`.
+**Context**: El Wix tenía `info@vitalitty.com` y `info@mysite.com` en los `mailto:` (erróneos). Confirmado: usar `info@vitalitty.es`.
 
-**Workaround**: Usar `info@vitalitty.es` (el que aparece visible en el texto del sitio) como valor por defecto. Marcar con `TODO`.
-
-**Rationale**: El dominio de la web es `.es`, el texto visible muestra `.es`, las direcciones `.com` y `mysite.com` son claramente erróneas de Wix.
+**Rationale**: Valor confirmado por el cliente.
 
 ## Technology Decisions
 

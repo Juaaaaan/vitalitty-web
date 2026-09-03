@@ -8,7 +8,7 @@
 
 **Input**: Migración 1:1 de la web de Vitalitty (clínica de nutrición y fisioterapia en Perales de Tajuña, Madrid) desde Wix a Astro/Vercel. Réplica fiel de contenido, estructura y URLs.
 
-## User Scenarios & Testing *(mandatory)*
+## User Scenarios & Testing _(mandatory)_
 
 ### User Story 1 - Visitante navega páginas de servicios (Priority: P1)
 
@@ -22,7 +22,7 @@ Un visitante llega a la web, explora el menú, lee las páginas de Nutrición y 
 
 1. **Given** visitante en Home, **When** abre menú Servicios > Nutrición, **Then** ve 6 tarjetas de servicio con textos idénticos al original
 2. **Given** visitante en Nutrición, **When** hace clic en "Recomposición Online", **Then** llega a `/copia-de-nutrición` con el detalle del programa
-3. **Given** visitante en Fisioterapia, **When** ve las tarjetas, **Then** encuentra los 6 servicios con descripción y precio idénticos al original
+3. **Given** visitante en Fisioterapia, **When** ve las tarjetas, **Then** encuentra los 6 servicios con descripción
 4. **Given** visitante en Home, **When** scrollea, **Then** ve hero, equipo, "¿Por qué nosotros?", testimonios y contacto en ese orden
 
 ---
@@ -114,7 +114,7 @@ Un visitante ve la rejilla de 8 colaboradores con logo y enlace, y puede enviar 
 - Imagen de Wix no exportada: placeholder visible con `alt` descriptivo y `TODO` en el código
 - Formulario con campos excesivamente largos: validación server-side trunca/rechaza
 
-## Requirements *(mandatory)*
+## Requirements _(mandatory)_
 
 ### Functional Requirements
 
@@ -129,7 +129,7 @@ Un visitante ve la rejilla de 8 colaboradores con logo y enlace, y puede enviar 
 - **FR-009**: Sistema DEBE mostrar banner de consentimiento de cookies en primera visita
 - **FR-010**: Cabecera DEBE tener menú con submenú Servicios y enlaces sociales (Instagram, TikTok, YouTube, Facebook)
 - **FR-011**: Sistema DEBE ser responsive (mobile-first) y cumplir WCAG 2.1 AA
-- **FR-012**: Teléfonos y emails DEBEN ser correctos y consistentes entre texto y enlaces `tel:`/`mailto:` [NEEDS CLARIFICATION: números reales y email definitivo]
+- **FR-012**: Teléfonos y emails DEBEN ser correctos y consistentes entre texto y enlaces `tel:690071950`/`mailto:info@vitalitty.es`
 - **FR-013**: Imágenes DEBEN estar optimizadas (AVIF/WebP, lazy-loading, responsive sizes)
 
 ### Key Entities
@@ -140,7 +140,7 @@ Un visitante ve la rejilla de 8 colaboradores con logo y enlace, y puede enviar 
 - **Post (Blog)**: título, slug, categoría, fecha, contenido MDX, imagen destacada, metadatos SEO
 - **Página legal**: tipo (aviso-legal/privacidad/cookies), contenido
 
-## Success Criteria *(mandatory)*
+## Success Criteria _(mandatory)_
 
 ### Measurable Outcomes
 
@@ -154,7 +154,7 @@ Un visitante ve la rejilla de 8 colaboradores con logo y enlace, y puede enviar 
 ## Assumptions
 
 - Las imágenes del Wix original se exportan y colocan en `public/` antes de empezar la maquetación
-- El email de contacto definitivo y los teléfonos reales se confirman antes de desplegar a producción (NEEDS CLARIFICATION pendiente)
+- El email de contacto definitivo (info@vitalitty.es) y teléfono (690071950) confirmados
 - No se necesita CMS: el contenido se gestiona como ficheros en el repo
 - El dominio `vitalitty.es` se reconfigurará en Vercel al desplegar (fuera del scope técnico de este plan)
 - Los textos legales los proporciona el cliente o se redactan con plantilla estándar LOPDGDD
