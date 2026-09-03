@@ -20,8 +20,8 @@
 
 **Purpose**: Astro project initialization, dependencies, base config
 
-- [ ] T001 Initialize Astro v5 project with TypeScript in project root (astro.config.mjs, tsconfig.json, package.json)
-- [ ] T002 Install dependencies: @astrojs/vercel, @astrojs/sitemap, @astrojs/mdx, resend, tailwindcss v4
+- [x] T001 Initialize Astro v5 project with TypeScript in project root (astro.config.mjs, tsconfig.json, package.json)
+- [x] T002 Install dependencies: @astrojs/vercel, @astrojs/sitemap, @astrojs/mdx, resend, tailwindcss v4
 - [ ] T003 [P] Configure Tailwind CSS v4 in src/styles/global.css with base theme matching Wix color palette
 - [ ] T004 [P] Configure astro.config.mjs: vercel adapter (hybrid output for API routes), sitemap integration, mdx integration
 - [ ] T005 [P] Create public/robots.txt matching original Wix robots.txt
