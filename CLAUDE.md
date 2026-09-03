@@ -6,7 +6,7 @@ Instrucciones para trabajar en este repositorio con Claude Code.
 
 Migración **1:1** de la web `https://www.vitalitty.es` (actualmente en Wix) a un
 sitio en **Astro**, desplegado en **Vercel**. No es un rediseño: se replica el
-contenido, la estructura y las URLs del original. Ver `constitution.md` para los
+contenido, la estructura y las URLs del original. Ver `.specify/memory/constitution.m` para los
 principios no negociables.
 
 Vitalitty es una clínica de **nutrición y fisioterapia** en Perales de Tajuña
