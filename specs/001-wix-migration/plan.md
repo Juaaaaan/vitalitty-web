@@ -6,13 +6,13 @@
 
 ## Summary
 
-Migración fiel de `vitalitty.es` desde Wix a un sitio Astro v5 desplegado en Vercel. Se replican contenido, estructura, URLs y metadatos SEO del original. Se añaden páginas legales obligatorias (RGPD/LOPDGDD) y se corrigen bugs documentados (teléfonos, emails). Formularios vía Resend con Turnstile + honeypot. Blog con content collections MDX.
+Migración fiel de `vitalitty.es` desde Wix a un sitio Astro v7 desplegado en Vercel. Se replican contenido, estructura, URLs y metadatos SEO del original. Se añaden páginas legales obligatorias (RGPD/LOPDGDD) y se corrigen bugs documentados (teléfonos, emails). Formularios vía Resend con Turnstile + honeypot. Blog con content collections MDX.
 
 ## Technical Context
 
-**Language/Version**: TypeScript, Astro v5 (última estable)
+**Language/Version**: TypeScript, Astro v7 (última estable)
 
-**Primary Dependencies**: Astro v5, @astrojs/vercel (adapter SSR para endpoints), @astrojs/sitemap, @astrojs/mdx, Resend (email), Cloudflare Turnstile (anti-spam)
+**Primary Dependencies**: Astro v7, @astrojs/vercel (adapter SSR para endpoints), @astrojs/sitemap, @astrojs/mdx, Resend (email), Cloudflare Turnstile (anti-spam)
 
 **Storage**: Filesystem — `src/data/*.json` para servicios/testimonios/colaboradores, content collections MDX para blog. Sin base de datos.
 
