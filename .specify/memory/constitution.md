@@ -1,50 +1,89 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Constitución del proyecto — Vitalitty Web
 
-## Core Principles
+Migración 1:1 de `vitalitty.es` (Wix) a Astro, desplegada en Vercel.
+Estos principios son **no negociables** y prevalecen sobre decisiones puntuales.
+Cualquier cambio a esta constitución debe documentarse en un commit específico.
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+---
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+## I. Fidelidad al original primero (réplica 1:1)
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+La web migrada **reproduce fielmente** el contenido, la estructura y la jerarquía
+visual del Wix actual. No hay rediseño ni reescritura de textos.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+- Los textos, títulos, servicios y testimonios se toman **literalmente** de la web
+  real (`https://www.vitalitty.es`). No se inventa ni se "mejora" copy.
+- La única excepción son correcciones de bugs evidentes, que se aplican **solo si
+  están documentadas** como tal en el PR (ver Anexo A).
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+## II. Preservación de URLs y SEO (sin regresiones)
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+El posicionamiento actual no se toca.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+- **Todas las URLs existentes se preservan tal cual**, incluidas las que llevan
+  acentos (`/copia-de-nutrición`, `/blog/categories/sabías-qué`).
+- Cualquier limpieza de slug (p. ej. `/copia-de-nutrición` → `/recomposicion-online`)
+  es **opcional** y, si se hace, **debe** acompañarse de un redirect **301**.
+- Se replican: `title`, `meta description`, Open Graph, Twitter Card, `sitemap.xml`
+  y `robots.txt`. Ninguna página pierde metadatos respecto al original.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## III. Presupuesto de rendimiento
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+- **Static-first**: Astro en modo SSG. Cero JS por defecto; solo "islas" donde una
+  interacción lo exija (carrusel de testimonios, validación de formularios).
+- Objetivo **Lighthouse ≥ 95** en Performance, Accesibilidad, Best Practices y SEO
+  en todas las páginas.
+- Imágenes optimizadas (AVIF/WebP, tamaños responsive, lazy-loading) vía el
+  componente de imagen de Astro.
 
-## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+## IV. Accesibilidad (WCAG 2.1 AA)
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+- HTML semántico, `alt` en todas las imágenes con contenido, navegación por teclado,
+  foco visible y contraste AA.
+- Los iconos sociales y enlaces del menú tienen nombres accesibles.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+## V. Protección de datos (RGPD / LOPDGDD)
+
+Requisito legal, no un extra. Es un negocio de salud que recoge datos personales.
+
+- Páginas de **Aviso legal, Política de privacidad y Política de cookies** presentes
+  antes de salir a producción.
+- Banner de cookies con consentimiento y **checkbox de consentimiento** en cada
+  formulario, enlazando a la política de privacidad.
+- Ningún dato personal viaja en query strings ni se registra en logs de cliente.
+- Secretos (API keys) nunca se commitean; van en variables de entorno.
+
+## VI. Mantenibilidad
+
+- Desarrollo por **componentes**. El contenido repetido (servicios, testimonios,
+  colaboradores) vive en `src/data/*.json` o en content collections, **no** hardcodeado
+  en el markup.
+- Tipos y esquemas validados (content collections tipadas).
+- Las convenciones de código y estructura se documentan en `CLAUDE.md` y se respetan.
+
+## VII. Verificación
+
+Antes de dar una tarea por terminada:
+
+- **Comparación visual** de la página migrada contra el original de Wix.
+- **Comprobación de enlaces** (sin rotos) y de que las redirecciones 301 resuelven.
+- **Prueba real de envío** de cada formulario (llega el correo, funciona el anti-spam).
+- `astro check` y build sin errores ni warnings nuevos.
+
+---
+
+## Anexo A — Bugs del original a corregir (documentados)
+
+Estos desajustes del Wix actual se corrigen en la migración y se anotan en el PR:
+
+- **Teléfonos**: el número mostrado no coincide con el enlace `tel:`
+  (p. ej. muestra `657.423.574` pero enlaza a `690071950`). Verificar el número real
+  con el cliente antes de fijarlo.
+- **Emails**: los `mailto:` apuntan a direcciones incorrectas
+  (`info@vitalitty.com`, `info@mysite.com`) mientras el texto dice `info@vitalitty.es`.
+  Unificar al correo real confirmado por el cliente.
+
+## Anexo B — Gobernanza
+
+- Esta constitución se revisa si cambia el alcance (p. ej. si más adelante se añade
+  reserva de cita online o portal de paciente, que hoy quedan **fuera de alcance**).
