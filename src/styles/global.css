@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Wix theme palette — extracted from vitalitty.es CSS vars */
+
+  /* Greens (primary brand palette) */
+  --color-primary: #8da86d; /* color_18: buttons, accents */
+  --color-primary-dark: #5e6e4b; /* color_19 */
+  --color-primary-darker: #37422b; /* color_20 */
+  --color-primary-light: #bcc9ab; /* color_17 */
+  --color-primary-lighter: #e1ebd5; /* color_16 */
+
+  /* Neutrals */
+  --color-text: #383838; /* color_15/37: body text, dark sections */
+  --color-text-light: #8a8a8a; /* color_14: secondary text */
+  --color-text-muted: #727272; /* color_6/9 */
+  --color-bg: #ffffff; /* color_11 */
+  --color-bg-alt: #f5f5f5; /* color_12 */
+  --color-border: #e8e6e6; /* color_13 */
+  --color-border-light: #b0b0b0; /* color_7/10 */
+
+  /* Accent: dark green (logo / specific elements) */
+  --color-accent: #0c4426;
+
+  /* Warm accents (Wix secondary palettes — available if needed) */
+  --color-warm: #e3cd94; /* color_23 */
+  --color-warm-light: #fcf1d4; /* color_21 */
+
+  /*
+   * Typography — Wix originals are hosted fonts:
+   *   Headings: futura-lt-w01-book
+   *   Body: brandon-grot-w01-light
+   *   Accent: proxima-n-w01-reg
+   *   Small: din-next-w01-light
+   *
+   * Using closest system/web-safe fallbacks to match visual weight.
+   * TODO: evaluate purchasing/self-hosting Futura LT and Brandon Grotesque
+   *       for exact fidelity once client approves.
+   */
+  --font-heading: 'Futura', 'Century Gothic', 'AppleGothic', sans-serif;
+  --font-body: 'Gill Sans', 'Gill Sans MT', 'Calibri', sans-serif;
+  --font-accent: 'Proxima Nova', system-ui, sans-serif;
+  --font-small: 'DIN Next', 'Arial Narrow', sans-serif;
+}

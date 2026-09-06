@@ -20,14 +20,14 @@
 
 **Purpose**: Astro project initialization, dependencies, base config
 
-- [ ] T001 Initialize Astro v5 project with TypeScript in project root (astro.config.mjs, tsconfig.json, package.json)
-- [ ] T002 Install dependencies: @astrojs/vercel, @astrojs/sitemap, @astrojs/mdx, resend, tailwindcss v4
-- [ ] T003 [P] Configure Tailwind CSS v4 in src/styles/global.css with base theme matching Wix color palette
-- [ ] T004 [P] Configure astro.config.mjs: vercel adapter (hybrid output for API routes), sitemap integration, mdx integration
-- [ ] T005 [P] Create public/robots.txt matching original Wix robots.txt
-- [ ] T006 [P] Place favicon.ico in public/
-- [ ] T007 [P] Create vercel.json with rewrites for accented URLs: /copia-de-nutrición → /copia-de-nutricion, /blog/categories/sabías-qué → /blog/categories/sabias-que
-- [ ] T008 [P] Create .env.example with RESEND_API_KEY, TURNSTILE_SECRET_KEY, TURNSTILE_SITE_KEY, CONTACT_TO_EMAIL
+- [x] T001 Initialize Astro v5 project with TypeScript in project root (astro.config.mjs, tsconfig.json, package.json)
+- [x] T002 Install dependencies: @astrojs/vercel, @astrojs/sitemap, @astrojs/mdx, resend, tailwindcss v4
+- [x] T003 [P] Configure Tailwind CSS v4 in src/styles/global.css with base theme matching Wix color palette
+- [x] T004 [P] Configure astro.config.mjs: vercel adapter (hybrid output for API routes), sitemap integration, mdx integration
+- [x] T005 [P] Create public/robots.txt matching original Wix robots.txt
+- [x] T006 [P] Place favicon.ico in public/
+- [x] T007 [P] Create vercel.json with rewrites for accented URLs: /copia-de-nutrición → /copia-de-nutricion, /blog/categories/sabías-qué → /blog/categories/sabias-que
+- [x] T008 [P] Create .env.example with RESEND_API_KEY, TURNSTILE_SECRET_KEY, TURNSTILE_SITE_KEY, CONTACT_TO_EMAIL
 
 ---
 
@@ -37,7 +37,7 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T009 Create BaseLayout in src/layouts/BaseLayout.astro with HTML skeleton, SEO meta props (title, description, ogTitle, ogDescription, ogImage, ogUrl, twitterCard), canonical URL, and slot for page content
+- [x] T009 Create BaseLayout in src/layouts/BaseLayout.astro with HTML skeleton, SEO meta props (title, description, ogTitle, ogDescription, ogImage, ogUrl, twitterCard), canonical URL, and slot for page content
 - [ ] T010 Create Header component in src/components/Header.astro with nav menu (Inicio, Conócenos anchor, Servicios dropdown with Nutrición/Fisioterapia, Colaboraciones, Blog, Contacto), mobile hamburger, and social icons (Instagram, TikTok, YouTube, Facebook) with accessible labels
 - [ ] T011 [P] Create Footer component in src/components/Footer.astro with contact info, social links, and links to legal pages (aviso-legal, politica-privacidad, politica-cookies)
 - [ ] T012 [P] Create src/data/servicios-nutricion.json with 6 services (Nutrición Presencial, Antropometría/plicometría, Nutrición Online, Nutrición + entrenamiento, Recomposición Online, Personal Foodshopper) — copy literal from Wix
