@@ -1,0 +1,32 @@
+[
+  {
+    "id": "sesion-fisioterapia",
+    "nombre": "Sesión Fisioterapia",
+    "descripcion": "Técnica de terapia manual ortopédica. La movilización neural, movilizaciones articulares de alta y baja velocidad, tratamiento del tejido blando, punción seca o electropunción."
+  },
+  {
+    "id": "tecnica-invasiva-ecoguiada",
+    "nombre": "Técnica invasiva ecoguiada",
+    "descripcion": "La ecografía aporta seguridad y eficacia al tratamiento, ya que, algunos tejidos se encuentran a considerable profundidad y rodeados de estructuras."
+  },
+  {
+    "id": "pilates",
+    "nombre": "Pilates",
+    "descripcion": "Permite evaluar y trabajar las disyuntivas motoras tanto analíticas como globales. El control motor y el tono muscular son fundamentales para actuar desde la prevención hasta el tratamiento."
+  },
+  {
+    "id": "ecografia",
+    "nombre": "Ecografía",
+    "descripcion": "Contar con esta tecnología permite realizar una exploración más exhaustiva, además de ayudar a perfeccionar la técnica y aportar precisión."
+  },
+  {
+    "id": "valoracion-y-sesion",
+    "nombre": "Valoración y sesión",
+    "descripcion": "La utilización de test ortopédicos, tecnologías avanzadas y pruebas manuales dan información para tener un criterio diagnóstico y empezar el tratamiento."
+  },
+  {
+    "id": "fisioterapia-a-domicilio",
+    "nombre": "Fisioterapia a domicilio",
+    "descripcion": "Ecógrafo y camilla portátil. Adaptado a aquellas personas que no disponen de tiempo y momento suficiente."
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "id": "nutricion-presencial",
+    "nombre": "Nutrición Presencial",
+    "descripcion": "En base a los objetivos del paciente, valoración corporal e información se realiza un plan nutricional específico en base a sus horarios, gustos y preferencias."
+  },
+  {
+    "id": "antropometria-plicometria",
+    "nombre": "Antropometría / plicometría",
+    "descripcion": "Se obtienen los niveles corporales (grasa, masa muscular, oseo, etc.) con una mayor precisión que con el método de biompedancia."
+  },
+  {
+    "id": "nutricion-online",
+    "nombre": "Nutrición Online",
+    "descripcion": "Se facilita un documento en el cual el paciente debe rellenar toda la información posible sobre su rutina nutricional diaria. Este seguimiento se realiza periódicamente mediante videoconferencia."
+  },
+  {
+    "id": "nutricion-entrenamiento",
+    "nombre": "Nutrición + entrenamiento",
+    "descripcion": "Junto con el plan nutricional se elabora un plan de entrenamiento específico para cumplir los objetivos personales."
+  },
+  {
+    "id": "recomposicion-online",
+    "nombre": "Recomposición Online",
+    "descripcion": "Se trata de un programa totalmente online, sin necesidad de citas ni desplazamientos. El paciente marca sus tiempos.",
+    "enlace": "/copia-de-nutricion"
+  },
+  {
+    "id": "personal-foodshopper",
+    "nombre": "Personal Foodshopper",
+    "descripcion": "Se dedica una mañana para realizar una pequeña compra y enseñar que alimentos y productos son reales y nutritivos."
+  }
+]

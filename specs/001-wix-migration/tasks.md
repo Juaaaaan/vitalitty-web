@@ -38,13 +38,13 @@
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
 - [x] T009 Create BaseLayout in src/layouts/BaseLayout.astro with HTML skeleton, SEO meta props (title, description, ogTitle, ogDescription, ogImage, ogUrl, twitterCard), canonical URL, and slot for page content
-- [ ] T010 Create Header component in src/components/Header.astro with nav menu (Inicio, Conócenos anchor, Servicios dropdown with Nutrición/Fisioterapia, Colaboraciones, Blog, Contacto), mobile hamburger, and social icons (Instagram, TikTok, YouTube, Facebook) with accessible labels
-- [ ] T011 [P] Create Footer component in src/components/Footer.astro with contact info, social links, and links to legal pages (aviso-legal, politica-privacidad, politica-cookies)
-- [ ] T012 [P] Create src/data/servicios-nutricion.json with 6 services (Nutrición Presencial, Antropometría/plicometría, Nutrición Online, Nutrición + entrenamiento, Recomposición Online, Personal Foodshopper) — copy literal from Wix
-- [ ] T013 [P] Create src/data/servicios-fisio.json with 6 services (Sesión Fisioterapia, Técnica invasiva ecoguiada, Pilates, Ecografía, Valoración y sesión, Fisioterapia a domicilio) — copy literal from Wix
-- [ ] T014 [P] Create src/data/testimonios.json with testimonials from Wix — copy literal
-- [ ] T015 [P] Create src/data/colaboradores.json with 8 collaborators (nombre, logo, enlace) — copy literal from Wix
-- [ ] T016 [P] Export and place all images from Wix into public/images/ (team photos, service icons, collaborator logos, blog images)
+- [x] T010 Create Header component in src/components/Header.astro with nav menu (Inicio, Conócenos anchor, Servicios dropdown with Nutrición/Fisioterapia, Colaboraciones, Blog, Contacto), mobile hamburger, and social icons (Instagram, TikTok, YouTube, Facebook) with accessible labels
+- [x] T011 [P] Create Footer component in src/components/Footer.astro with contact info, social links, and links to legal pages (aviso-legal, politica-privacidad, politica-cookies)
+- [x] T012 [P] Create src/data/servicios-nutricion.json with 6 services (Nutrición Presencial, Antropometría/plicometría, Nutrición Online, Nutrición + entrenamiento, Recomposición Online, Personal Foodshopper) — copy literal from Wix
+- [x] T013 [P] Create src/data/servicios-fisio.json with 6 services (Sesión Fisioterapia, Técnica invasiva ecoguiada, Pilates, Ecografía, Valoración y sesión, Fisioterapia a domicilio) — copy literal from Wix
+- [x] T014 [P] Create src/data/testimonios.json with testimonials from Wix — copy literal
+- [x] T015 [P] Create src/data/colaboradores.json with 8 collaborators (nombre, logo, enlace) — copy literal from Wix
+- [x] T016 [P] Export and place all images from Wix into public/images/ (team photos, service icons, collaborator logos, blog images)
 
 **Checkpoint**: Foundation ready — layout renders, data files populated, user story implementation can begin
 
@@ -250,6 +250,7 @@ Task: "Create Contacto in src/pages/contacto.astro"
 ### Parallel Team Strategy
 
 With multiple developers after Foundational:
+
 - Developer A: US1 (service pages) → US2 (forms)
 - Developer B: US3 (blog) → US6 (collaborations)
 - Developer C: US5 (legal/cookies) → US4 (SEO audit)
