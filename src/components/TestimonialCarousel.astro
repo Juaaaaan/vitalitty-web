@@ -25,12 +25,12 @@ const { testimonios, autoplay = 7000 } = Astro.props;
       aria-roledescription="carrusel"
       aria-label="Testimonios de pacientes"
     >
-      <div class="carousel-track mx-auto max-w-[740px]" data-track>
+      <div class="carousel-track mx-auto max-w-[740px]" data-track tabindex="0">
         {
           testimonios.map((t, i) => (
             <figure
               data-slide
-              class="px-2 text-center"
+              class="px-10 text-center md:px-2"
               aria-roledescription="diapositiva"
               aria-label={`${i + 1} de ${testimonios.length}`}
             >
@@ -78,7 +78,7 @@ const { testimonios, autoplay = 7000 } = Astro.props;
         </svg>
       </button>
 
-      <div class="mt-6 flex justify-center gap-2 text-text" data-dots></div>
+      <div class="mt-6 flex justify-center text-text" data-dots></div>
     </snap-carousel>
   </div>
 </section>

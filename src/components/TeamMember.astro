@@ -18,14 +18,14 @@ const { miembro } = Astro.props;
     sizes="256px"
     class="h-64 w-64 rounded-full object-cover"
   />
-  <h3 class="mt-6 font-heading text-2xl font-normal">
+  <h2 class="mt-6 font-heading text-2xl font-normal">
     <a
       href={miembro.enlace}
       class="inline-block border-b-2 border-primary px-3 pb-1 text-text transition-colors hover:text-primary-dark"
     >
       {miembro.nombre}
     </a>
-  </h3>
+  </h2>
   <ul class="mt-4 space-y-1 text-sm leading-relaxed text-text">
     {miembro.descripcion.map((linea) => <li>{linea}</li>)}
   </ul>

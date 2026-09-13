@@ -7,6 +7,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://www.vitalitty.es',
+  // Inline the (small) Tailwind bundle to avoid a render-blocking request.
+  build: { inlineStylesheets: 'always' },
   adapter: vercel(),
   // Legacy Wix URLs. Accented routes are generated natively by getStaticPaths.
   redirects: {

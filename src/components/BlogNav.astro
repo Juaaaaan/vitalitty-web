@@ -50,7 +50,7 @@ const linkClass =
 
   {
     search && (
-      <div class="relative md:w-56" data-blog-search hidden>
+      <div class="invisible relative md:w-56" data-blog-search>
         <label for="blog-search" class="sr-only">
           Buscar en el blog
         </label>
@@ -99,7 +99,7 @@ const linkClass =
   const haystacks = cards.map((card) => normalize(card.dataset.search ?? ''));
 
   if (box && input) {
-    box.hidden = false; // search only makes sense with JS
+    box.classList.remove('invisible'); // search only makes sense with JS
     input.addEventListener('input', () => {
       const terms = normalize(input.value).split(/\s+/).filter(Boolean);
       let visible = 0;

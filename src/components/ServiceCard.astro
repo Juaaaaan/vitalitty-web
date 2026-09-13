@@ -16,10 +16,24 @@ const icono = servicio.icono ? resolveImage(servicio.icono) : undefined;
     icono &&
       (servicio.enlace ? (
         <a href={servicio.enlace} tabindex="-1" aria-hidden="true">
-          <Image src={icono} alt="" width={64} height={64} class="h-16 w-16" />
+          <Image
+            src={icono}
+            alt=""
+            width={64}
+            densities={[1, 2, 3]}
+            height={64}
+            class="h-16 w-16"
+          />
         </a>
       ) : (
-        <Image src={icono} alt="" width={64} height={64} class="h-16 w-16" />
+        <Image
+          src={icono}
+          alt=""
+          width={64}
+          densities={[1, 2, 3]}
+          height={64}
+          class="h-16 w-16"
+        />
       ))
   }
   <h2 class="mt-5 font-heading text-xl font-normal text-text">
