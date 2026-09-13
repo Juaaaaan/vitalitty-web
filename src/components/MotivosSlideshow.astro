@@ -39,7 +39,7 @@ const { motivos, autoplay = 6000 } = Astro.props;
       />
       <div class="absolute inset-0 bg-text/55" aria-hidden="true"></div>
 
-      <div class="carousel-track relative" data-track>
+      <div class="carousel-track relative" data-track tabindex="0">
         {
           motivos.map((m, i) => (
             <div
@@ -93,7 +93,7 @@ const { motivos, autoplay = 6000 } = Astro.props;
       </button>
 
       <div
-        class="absolute bottom-5 left-0 flex w-full justify-center gap-2"
+        class="absolute bottom-5 left-0 flex w-full justify-center"
         data-dots
       >
       </div>

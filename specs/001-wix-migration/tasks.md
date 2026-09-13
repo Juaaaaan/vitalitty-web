@@ -163,14 +163,14 @@
 
 **Purpose**: Accessibility hardening, performance optimization, final validation
 
-- [ ] T047 [P] Accessibility audit: verify WCAG 2.1 AA on all pages — keyboard navigation, focus visible, contrast AA, alt text on all images, aria labels on social/menu icons
-- [ ] T048 [P] Image optimization audit: verify all images use Astro <Image> component with AVIF/WebP, responsive sizes, lazy-loading
-- [ ] T049 [P] Responsive audit: test all pages on mobile (375px), tablet (768px), desktop (1280px) — fix layout issues
-- [ ] T050 Run `astro check` — fix any type errors or diagnostics warnings
-- [ ] T051 Run `npm run build` — verify clean production build
-- [ ] T052 Run Lighthouse on all key pages (/, /nutricion, /fisioterapia, /contacto, /blog) — target ≥ 95 in all categories
-- [ ] T053 Run quickstart.md validation scenarios end-to-end
-- [ ] T054 Visual comparison of each migrated page against Wix original — document any deviations in PR
+- [x] T047 [P] Accessibility audit: verify WCAG 2.1 AA on all pages — keyboard navigation, focus visible, contrast AA, alt text on all images, aria labels on social/menu icons
+- [x] T048 [P] Image optimization audit: verify all images use Astro <Image> component with AVIF/WebP, responsive sizes, lazy-loading
+- [x] T049 [P] Responsive audit: test all pages on mobile (375px), tablet (768px), desktop (1280px) — fix layout issues
+- [x] T050 Run `astro check` — fix any type errors or diagnostics warnings
+- [x] T051 Run `npm run build` — verify clean production build
+- [x] T052 Run Lighthouse on all key pages (/, /nutricion, /fisioterapia, /contacto, /blog) — target ≥ 95 in all categories
+- [x] T053 Run quickstart.md validation scenarios end-to-end
+- [x] T054 Visual comparison of each migrated page against Wix original — document any deviations in PR
 
 ---
 

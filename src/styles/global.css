@@ -47,6 +47,8 @@
 @layer components {
   .carousel-track {
     display: flex;
+    align-items: flex-start;
+    transition: height 0.3s ease;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
@@ -62,15 +64,26 @@
   snap-carousel:not([data-enhanced]) [data-next] {
     display: none;
   }
+  /* 24px hit area (WCAG 2.5.8) around a 10px visual dot */
   .carousel-dot {
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+  .carousel-dot::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
     width: 0.625rem;
     height: 0.625rem;
     border-radius: 9999px;
     border: 1px solid currentColor;
-    background: transparent;
-    cursor: pointer;
   }
-  .carousel-dot[aria-current='true'] {
+  .carousel-dot[aria-current='true']::before {
     background: currentColor;
   }
 }
@@ -125,5 +138,19 @@
   }
   .prose-content hr {
     border-color: var(--color-border);
+  }
+}
+
+@layer components {
+  .carousel-track:focus-visible {
+    outline: 2px solid var(--color-primary-dark);
+    outline-offset: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    transition: none;
+    scroll-behavior: auto;
   }
 }

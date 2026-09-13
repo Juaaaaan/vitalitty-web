@@ -7,7 +7,7 @@ const currentPath = Astro.url.pathname;
 
 <header class="sticky top-0 z-50 bg-bg border-b border-border">
   <div
-    class="mx-auto flex max-w-[980px] items-center justify-between px-4 py-3"
+    class="relative mx-auto flex max-w-[980px] items-center justify-between px-4 py-3 md:flex-col md:justify-center md:gap-3 md:pb-4"
   >
     <a href="/" class="shrink-0">
       <Image
@@ -41,42 +41,37 @@ const currentPath = Astro.url.pathname;
       class="absolute left-0 top-full hidden w-full bg-bg shadow-lg md:static md:block md:w-auto md:shadow-none"
       aria-label="Navegación principal"
     >
-      <ul
-        class="flex flex-col items-center gap-0 md:flex-row md:gap-6"
-        role="menubar"
-      >
-        <li role="none">
+      <ul class="flex flex-col items-center gap-0 md:flex-row md:gap-12">
+        <li>
           <a
             href="/"
-            role="menuitem"
             class:list={[
-              'block px-4 py-3 text-sm font-heading tracking-wide transition-colors hover:text-primary md:px-0 md:py-0',
-              currentPath === '/' ? 'text-primary' : 'text-text',
+              'block px-4 py-3 text-sm font-heading tracking-wide transition-colors hover:text-primary-dark md:px-0 md:py-0',
+              currentPath === '/' ? 'text-primary-dark' : 'text-text',
             ]}
           >
             Inicio
           </a>
         </li>
-        <li role="none">
+        <li>
           <a
             href="/#conocenos"
-            role="menuitem"
-            class="block px-4 py-3 text-sm font-heading tracking-wide text-text transition-colors hover:text-primary md:px-0 md:py-0"
+            class="block px-4 py-3 text-sm font-heading tracking-wide text-text transition-colors hover:text-primary-dark md:px-0 md:py-0"
           >
             Conócenos
           </a>
         </li>
-        <li role="none" class="group relative">
+        <li class="group relative">
           <button
             type="button"
-            role="menuitem"
-            aria-haspopup="true"
+            id="servicios-toggle"
             aria-expanded="false"
-            class="flex w-full items-center gap-1 px-4 py-3 text-sm font-heading tracking-wide text-text transition-colors hover:text-primary md:px-0 md:py-0"
+            aria-controls="servicios-menu"
+            class="flex w-full items-center gap-1 px-4 py-3 text-sm font-heading tracking-wide text-text transition-colors hover:text-primary-dark md:px-0 md:py-0"
           >
             Servicios
             <svg
-              class="h-3 w-3 transition-transform group-hover:rotate-180"
+              class="h-3 w-3 transition-transform group-hover:rotate-180 group-data-[open]:rotate-180"
               viewBox="0 0 12 12"
               fill="none"
               aria-hidden="true"
@@ -90,60 +85,59 @@ const currentPath = Astro.url.pathname;
             </svg>
           </button>
           <ul
-            class="hidden bg-bg py-2 shadow-lg group-hover:block md:absolute md:left-0 md:top-full md:min-w-[180px] md:rounded-md"
-            role="menu"
+            id="servicios-menu"
+            class="hidden bg-bg py-2 shadow-lg data-[open]:block md:group-hover:block md:absolute md:left-0 md:top-full md:min-w-[180px] md:rounded-md"
           >
-            <li role="none">
+            <li>
               <a
                 href="/nutricion"
-                role="menuitem"
-                class="block px-6 py-2 text-sm text-text transition-colors hover:bg-bg-alt hover:text-primary"
+                class="block px-6 py-2 text-sm text-text transition-colors hover:bg-bg-alt hover:text-primary-dark"
               >
                 Nutrición
               </a>
             </li>
-            <li role="none">
+            <li>
               <a
                 href="/fisioterapia"
-                role="menuitem"
-                class="block px-6 py-2 text-sm text-text transition-colors hover:bg-bg-alt hover:text-primary"
+                class="block px-6 py-2 text-sm text-text transition-colors hover:bg-bg-alt hover:text-primary-dark"
               >
                 Fisioterapia
               </a>
             </li>
           </ul>
         </li>
-        <li role="none">
+        <li>
           <a
             href="/colaboraciones"
-            role="menuitem"
             class:list={[
-              'block px-4 py-3 text-sm font-heading tracking-wide transition-colors hover:text-primary md:px-0 md:py-0',
-              currentPath === '/colaboraciones' ? 'text-primary' : 'text-text',
+              'block px-4 py-3 text-sm font-heading tracking-wide transition-colors hover:text-primary-dark md:px-0 md:py-0',
+              currentPath === '/colaboraciones'
+                ? 'text-primary-dark'
+                : 'text-text',
             ]}
           >
             Colaboraciones
           </a>
         </li>
-        <li role="none">
+        <li>
           <a
             href="/blog"
-            role="menuitem"
             class:list={[
-              'block px-4 py-3 text-sm font-heading tracking-wide transition-colors hover:text-primary md:px-0 md:py-0',
-              currentPath.startsWith('/blog') ? 'text-primary' : 'text-text',
+              'block px-4 py-3 text-sm font-heading tracking-wide transition-colors hover:text-primary-dark md:px-0 md:py-0',
+              currentPath.startsWith('/blog')
+                ? 'text-primary-dark'
+                : 'text-text',
             ]}
           >
             Blog
           </a>
         </li>
-        <li role="none">
+        <li>
           <a
             href="/contacto"
-            role="menuitem"
             class:list={[
-              'block px-4 py-3 text-sm font-heading tracking-wide transition-colors hover:text-primary md:px-0 md:py-0',
-              currentPath === '/contacto' ? 'text-primary' : 'text-text',
+              'block px-4 py-3 text-sm font-heading tracking-wide transition-colors hover:text-primary-dark md:px-0 md:py-0',
+              currentPath === '/contacto' ? 'text-primary-dark' : 'text-text',
             ]}
           >
             Contacto
@@ -152,13 +146,15 @@ const currentPath = Astro.url.pathname;
       </ul>
     </nav>
 
-    <div class="hidden items-center gap-3 md:flex">
+    <div
+      class="hidden items-center gap-3 md:absolute md:top-6 md:right-4 md:flex"
+    >
       <a
         href="https://www.instagram.com/vitalittylive/?hl=es"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Vitalitty en Instagram"
-        class="text-text transition-colors hover:text-primary"
+        class="text-text transition-colors hover:text-primary-dark"
       >
         <svg
           class="h-5 w-5"
@@ -176,7 +172,7 @@ const currentPath = Astro.url.pathname;
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Vitalitty en TikTok"
-        class="text-text transition-colors hover:text-primary"
+        class="text-text transition-colors hover:text-primary-dark"
       >
         <svg
           class="h-5 w-5"
@@ -194,7 +190,7 @@ const currentPath = Astro.url.pathname;
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Vitalitty en YouTube"
-        class="text-text transition-colors hover:text-primary"
+        class="text-text transition-colors hover:text-primary-dark"
       >
         <svg
           class="h-5 w-5"
@@ -212,7 +208,7 @@ const currentPath = Astro.url.pathname;
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Vitalitty en Facebook"
-        class="text-text transition-colors hover:text-primary"
+        class="text-text transition-colors hover:text-primary-dark"
       >
         <svg
           class="h-5 w-5"
@@ -249,6 +245,33 @@ const currentPath = Astro.url.pathname;
       bar1?.classList.remove('translate-y-2', 'rotate-45');
       bar2?.classList.remove('opacity-0');
       bar3?.classList.remove('-translate-y-2', '-rotate-45');
+    }
+  });
+
+  const serviciosToggle = document.getElementById('servicios-toggle');
+  const serviciosMenu = document.getElementById('servicios-menu');
+  const serviciosItem = serviciosToggle?.parentElement;
+
+  const setServicios = (open: boolean) => {
+    serviciosToggle?.setAttribute('aria-expanded', String(open));
+    serviciosMenu?.toggleAttribute('data-open', open);
+    serviciosItem?.toggleAttribute('data-open', open);
+  };
+
+  serviciosToggle?.addEventListener('click', () =>
+    setServicios(serviciosToggle.getAttribute('aria-expanded') !== 'true'),
+  );
+  serviciosItem?.addEventListener('focusout', (event) => {
+    if (!serviciosItem.contains(event.relatedTarget as Node))
+      setServicios(false);
+  });
+  document.addEventListener('keydown', (event) => {
+    if (
+      event.key === 'Escape' &&
+      serviciosToggle?.getAttribute('aria-expanded') === 'true'
+    ) {
+      setServicios(false);
+      serviciosToggle.focus();
     }
   });
 </script>
