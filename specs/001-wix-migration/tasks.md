@@ -134,11 +134,11 @@
 
 ### Implementation for User Story 5
 
-- [ ] T040 [P] [US5] Create CookieBanner island in src/components/CookieBanner.astro — client:load, accept/reject buttons, saves preference to localStorage (cookies-accepted: true/false), hides on subsequent visits
-- [ ] T041 [P] [US5] Create Aviso Legal page in src/pages/aviso-legal.astro with legal text (client-provided or LOPDGDD template). SEO meta.
-- [ ] T042 [P] [US5] Create Política de Privacidad page in src/pages/politica-privacidad.astro with privacy text. SEO meta.
-- [ ] T043 [P] [US5] Create Política de Cookies page in src/pages/politica-cookies.astro with cookie policy text. SEO meta.
-- [ ] T044 [US5] Add CookieBanner to BaseLayout.astro so it appears on every page
+- [x] T040 [P] [US5] Create CookieBanner island in src/components/CookieBanner.astro — client:load, accept/reject buttons, saves preference to localStorage (cookies-accepted: true/false), hides on subsequent visits
+- [x] T041 [P] [US5] Create Aviso Legal page in src/pages/aviso-legal.astro with legal text (client-provided or LOPDGDD template). SEO meta.
+- [x] T042 [P] [US5] Create Política de Privacidad page in src/pages/politica-privacidad.astro with privacy text. SEO meta.
+- [x] T043 [P] [US5] Create Política de Cookies page in src/pages/politica-cookies.astro with cookie policy text. SEO meta.
+- [x] T044 [US5] Add CookieBanner to BaseLayout.astro so it appears on every page
 
 **Checkpoint**: Cookie banner on first visit. Legal pages render. Footer links work. ContactForm RGPD checkbox links to privacy policy.
 

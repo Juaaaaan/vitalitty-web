@@ -1,0 +1,128 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+import Pendiente from '../components/Pendiente.astro';
+import contacto from '../data/contacto.json';
+---
+
+<LegalLayout
+  title="Política de privacidad"
+  description="Cómo trata Vitalitty los datos personales que recibe a través de los formularios de vitalitty.es y cómo ejercer tus derechos (RGPD y LOPDGDD)."
+  updated="2026-09-13"
+>
+  <p>
+    Esta política explica cómo se tratan los datos personales recogidos en{' '}
+    <strong>www.vitalitty.es</strong>, conforme al Reglamento (UE) 2016/679
+    (RGPD) y la Ley Orgánica 3/2018 de Protección de Datos Personales y garantía
+    de los derechos digitales (LOPDGDD).
+  </p>
+
+  <h2>1. Responsable del tratamiento</h2>
+  <ul>
+    <li>
+      Responsable: <Pendiente
+        dato="razón social o nombre completo del titular"
+      />
+    </li>
+    <li>NIF/CIF: <Pendiente dato="NIF/CIF" /></li>
+    <li>Domicilio: {contacto.direccionPostal.join(' ')}</li>
+    <li>
+      Email de contacto: <a href={`mailto:${contacto.email}`}
+        >{contacto.email}</a
+      >
+    </li>
+    <li>
+      Delegado de Protección de Datos:{' '}
+      <Pendiente
+        dato="datos del DPD si se ha designado; si no, eliminar esta línea"
+      />
+    </li>
+  </ul>
+
+  <h2>2. Qué datos tratamos</h2>
+  <p>
+    A través de los formularios de contacto de las páginas Contacto, Nutrición,
+    Fisioterapia y Colaboraciones recogemos: nombre, primer apellido, email,
+    teléfono (opcional), el contenido del mensaje y la página desde la que se
+    envía.
+  </p>
+  <p>
+    Te pedimos que <strong>no incluyas datos de salud</strong> en el mensaje. Si decides
+    hacerlo, los trataremos únicamente para atender tu consulta y sobre la base de
+    tu consentimiento explícito (art. 9.2.a RGPD).
+  </p>
+
+  <h2>3. Finalidad</h2>
+  <ul>
+    <li>Responder a tus consultas y solicitudes de información o cita.</li>
+    <li>Gestionar propuestas de colaboración recibidas por el formulario.</li>
+    <li>Proteger el sitio frente a envíos automatizados (spam).</li>
+  </ul>
+  <p>No se toman decisiones automatizadas ni se elaboran perfiles.</p>
+
+  <h2>4. Legitimación</h2>
+  <p>
+    La base legal es tu <strong>consentimiento</strong> (art. 6.1.a RGPD), que otorgas
+    al marcar la casilla de aceptación antes de enviar el formulario. La protección
+    anti-spam se basa en el interés legítimo de mantener la seguridad del sitio (art.
+    6.1.f RGPD).
+  </p>
+
+  <h2>5. Conservación</h2>
+  <p>
+    Los mensajes se conservan el tiempo necesario para atender la consulta y, en
+    su caso, durante los plazos legales de prescripción de las responsabilidades
+    que pudieran derivarse.{' '}
+    <Pendiente
+      dato="plazo concreto de conservación definido por el titular (p. ej. 12 meses)"
+    />
+  </p>
+
+  <h2>6. Destinatarios y encargados del tratamiento</h2>
+  <p>
+    No se ceden datos a terceros salvo obligación legal. Para prestar el
+    servicio intervienen los siguientes proveedores, como encargados del
+    tratamiento:
+  </p>
+  <ul>
+    <li>
+      <strong>Vercel Inc.</strong> (alojamiento web y ejecución del formulario).
+    </li>
+    <li>
+      <strong>Resend</strong> (envío del mensaje por email al buzón de Vitalitty).
+    </li>
+    <li>
+      <strong>Cloudflare, Inc.</strong> (Turnstile, verificación anti-spam de los
+      formularios).
+    </li>
+  </ul>
+  <p>
+    Algunos de estos proveedores pueden tratar datos fuera del Espacio Económico
+    Europeo. En ese caso las transferencias se amparan en el Marco de Privacidad
+    de Datos UE-EE. UU. o en cláusulas contractuales tipo aprobadas por la
+    Comisión Europea.
+  </p>
+
+  <h2>7. Tus derechos</h2>
+  <p>
+    Puedes ejercer los derechos de acceso, rectificación, supresión, oposición,
+    limitación del tratamiento y portabilidad, así como retirar tu
+    consentimiento en cualquier momento, escribiendo a{' '}
+    <a href={`mailto:${contacto.email}`}>{contacto.email}</a> e indicando el derecho
+    que deseas ejercer.
+  </p>
+  <p>
+    Si consideras que el tratamiento no se ajusta a la normativa, puedes
+    presentar una reclamación ante la Agencia Española de Protección de Datos (<a
+      href="https://www.aepd.es"
+      target="_blank"
+      rel="noopener noreferrer">www.aepd.es</a
+    >).
+  </p>
+
+  <h2>8. Seguridad</h2>
+  <p>
+    Aplicamos medidas técnicas y organizativas adecuadas: conexión cifrada
+    (HTTPS), envío de los datos en el cuerpo de la petición (nunca en la URL) y
+    registros del servidor sin datos personales de los formularios.
+  </p>
+</LegalLayout>

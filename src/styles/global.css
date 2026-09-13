@@ -75,55 +75,55 @@
   }
 }
 
-/* Blog post body (MDX migrated from Wix) */
+/* Long-form text: blog posts (MDX from Wix) and legal pages */
 @layer components {
-  .post-content {
+  .prose-content {
     font-size: 1.0625rem;
     line-height: 1.8;
   }
-  .post-content > * + * {
+  .prose-content > * + * {
     margin-top: 1.25rem;
   }
-  .post-content h2,
-  .post-content h3,
-  .post-content h4 {
+  .prose-content h2,
+  .prose-content h3,
+  .prose-content h4 {
     margin-top: 2.25rem;
     font-family: var(--font-heading);
     line-height: 1.3;
     scroll-margin-top: 6rem;
   }
-  .post-content h2 {
+  .prose-content h2 {
     font-size: 1.625rem;
   }
-  .post-content h3 {
+  .prose-content h3 {
     font-size: 1.375rem;
   }
-  .post-content a {
+  .prose-content a {
     text-decoration: underline;
   }
-  .post-content a:hover {
+  .prose-content a:hover {
     color: var(--color-primary-dark);
   }
-  .post-content ul {
+  .prose-content ul {
     list-style: disc;
     padding-left: 1.5rem;
   }
-  .post-content ol {
+  .prose-content ol {
     list-style: decimal;
     padding-left: 1.5rem;
   }
-  .post-content blockquote {
+  .prose-content blockquote {
     border-left: 3px solid var(--color-primary);
     padding-left: 1.25rem;
     font-style: italic;
     color: var(--color-text-muted);
   }
-  .post-content img {
+  .prose-content img {
     margin-inline: auto;
     height: auto;
     max-width: 100%;
   }
-  .post-content hr {
+  .prose-content hr {
     border-color: var(--color-border);
   }
 }
