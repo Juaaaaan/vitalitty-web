@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import banner from '../assets/images/banners/fisioterapia.jpg';
+import ServiceCard from '../components/ServiceCard.astro';
+import servicios from '../data/servicios-fisio.json';
+
+const seo = {
+  title: 'Fisioterapia | Vitalitty',
+  description:
+    'En vitalitty te asesoramos para que puedas cumplir tus objetivos. Rubén Orcajo, experto fisioterapeuta te enseñará principios básicos mientras estás en una sesión de fisio',
+};
+---
+
+<BaseLayout {...seo} twitterCard="summary">
+  <PageHeader title="Fisioterapia" id="fisioterapia" image={banner} />
+
+  <section class="px-4 pb-12" aria-label="Servicios de fisioterapia">
+    <div
+      class="mx-auto grid max-w-[980px] gap-x-6 gap-y-4 sm:grid-cols-2 lg:grid-cols-3"
+    >
+      {servicios.map((servicio) => <ServiceCard servicio={servicio} />)}
+    </div>
+  </section>
+</BaseLayout>

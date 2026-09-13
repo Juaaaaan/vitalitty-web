@@ -58,14 +58,14 @@
 
 ### Implementation for User Story 1
 
-- [ ] T017 [P] [US1] Create ServiceCard component in src/components/ServiceCard.astro — props: servicio (id, nombre, descripcion, precio?, enlace?, icono?)
-- [ ] T018 [P] [US1] Create TeamMember component in src/components/TeamMember.astro — props: nombre, rol, descripcion, imagen
-- [ ] T019 [P] [US1] Create TestimonialCarousel island in src/components/TestimonialCarousel.astro — client:visible, vanilla JS, auto-advance, swipe support, props: testimonios[]
-- [ ] T020 [US1] Create Home page in src/pages/index.astro — hero section ("Cuidar tu cuerpo, comienza con saber entenderlo"), TeamMember×2 (Jesús García, Rubén Horcajo), "¿Por qué nosotros?" section, TestimonialCarousel, contact info block with correct phones and email. SEO meta from Wix original.
-- [ ] T021 [P] [US1] Create Nutrición page in src/pages/nutricion.astro — 6 ServiceCards from servicios-nutricion.json, "Recomposición Online" card links to /copia-de-nutrición. SEO meta from Wix.
-- [ ] T022 [P] [US1] Create Fisioterapia page in src/pages/fisioterapia.astro — 6 ServiceCards from servicios-fisio.json. SEO meta from Wix.
-- [ ] T023 [P] [US1] Create Recomposición Online page in src/pages/copia-de-nutricion.astro — landing detail for the online program. SEO meta from Wix.
-- [ ] T024 [P] [US1] Create Contacto page in src/pages/contacto.astro — address, phones, email, opening hours, map embed. SEO meta from Wix. (ContactForm added in US2 phase)
+- [x] T017 [P] [US1] Create ServiceCard component in src/components/ServiceCard.astro — props: servicio (id, nombre, descripcion, precio?, enlace?, icono?)
+- [x] T018 [P] [US1] Create TeamMember component in src/components/TeamMember.astro — props: nombre, rol, descripcion, imagen
+- [x] T019 [P] [US1] Create TestimonialCarousel island in src/components/TestimonialCarousel.astro — client:visible, vanilla JS, auto-advance, swipe support, props: testimonios[]
+- [x] T020 [US1] Create Home page in src/pages/index.astro — hero section ("Cuidar tu cuerpo, comienza con saber entenderlo"), TeamMember×2 (Jesús García, Rubén Horcajo), "¿Por qué nosotros?" section, TestimonialCarousel, contact info block with correct phones and email. SEO meta from Wix original.
+- [x] T021 [P] [US1] Create Nutrición page in src/pages/nutricion.astro — 6 ServiceCards from servicios-nutricion.json, "Recomposición Online" card links to /copia-de-nutrición. SEO meta from Wix.
+- [x] T022 [P] [US1] Create Fisioterapia page in src/pages/fisioterapia.astro — 6 ServiceCards from servicios-fisio.json. SEO meta from Wix.
+- [x] T023 [P] [US1] Create Recomposición Online page in src/pages/copia-de-nutricion.astro — landing detail for the online program. SEO meta from Wix.
+- [x] T024 [P] [US1] Create Contacto page in src/pages/contacto.astro — address, phones, email, opening hours, map embed. SEO meta from Wix. (ContactForm added in US2 phase)
 
 **Checkpoint**: All static pages render. Visual comparison against Wix passes. Menu navigation works.
 

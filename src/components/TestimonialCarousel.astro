@@ -1,0 +1,88 @@
+---
+import type { Testimonio } from '../lib/types';
+
+interface Props {
+  testimonios: Testimonio[];
+  autoplay?: number;
+}
+
+const { testimonios, autoplay = 7000 } = Astro.props;
+---
+
+<section class="px-4 py-12" aria-labelledby="testimonios-title">
+  <div class="mx-auto max-w-[980px]">
+    <h2
+      id="testimonios-title"
+      class="mx-auto max-w-[700px] border-b border-text-light pb-2 text-center font-heading text-2xl font-normal"
+    >
+      Testimonios
+    </h2>
+
+    <snap-carousel
+      class="relative mt-8 block"
+      data-autoplay={autoplay}
+      data-dot-label="Ver testimonio"
+      aria-roledescription="carrusel"
+      aria-label="Testimonios de pacientes"
+    >
+      <div class="carousel-track mx-auto max-w-[740px]" data-track>
+        {
+          testimonios.map((t, i) => (
+            <figure
+              data-slide
+              class="px-2 text-center"
+              aria-roledescription="diapositiva"
+              aria-label={`${i + 1} de ${testimonios.length}`}
+            >
+              <blockquote class="font-heading text-lg leading-relaxed text-text-muted md:text-xl">
+                <p>“{t.texto}”</p>
+              </blockquote>
+              <figcaption class="mt-4 text-sm tracking-widest text-text-muted">
+                — {t.nombre}
+              </figcaption>
+            </figure>
+          ))
+        }
+      </div>
+
+      <button
+        type="button"
+        data-prev
+        class="absolute top-1/2 left-0 -translate-y-1/2 p-2 text-text transition-colors hover:text-primary-dark"
+        aria-label="Testimonio anterior"
+      >
+        <svg
+          class="h-10 w-5"
+          viewBox="0 0 20 40"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path d="M18 2 2 20l16 18" stroke="currentColor" stroke-width="1.5"
+          ></path>
+        </svg>
+      </button>
+      <button
+        type="button"
+        data-next
+        class="absolute top-1/2 right-0 -translate-y-1/2 p-2 text-text transition-colors hover:text-primary-dark"
+        aria-label="Testimonio siguiente"
+      >
+        <svg
+          class="h-10 w-5"
+          viewBox="0 0 20 40"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path d="m2 2 16 18L2 38" stroke="currentColor" stroke-width="1.5"
+          ></path>
+        </svg>
+      </button>
+
+      <div class="mt-6 flex justify-center gap-2 text-text" data-dots></div>
+    </snap-carousel>
+  </div>
+</section>
+
+<script>
+  import '../scripts/carousel';
+</script>

@@ -1,17 +1,139 @@
 ---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TeamMember from '../components/TeamMember.astro';
+import MotivosSlideshow from '../components/MotivosSlideshow.astro';
+import TestimonialCarousel from '../components/TestimonialCarousel.astro';
+import MapEmbed from '../components/MapEmbed.astro';
+import hero from '../assets/images/hero-banner.jpg';
+import equipo from '../data/equipo.json';
+import motivos from '../data/porque-nosotros.json';
+import testimonios from '../data/testimonios.json';
+import contacto from '../data/contacto.json';
 
+const seo = {
+  title: 'Vitalitty | Expertos en nutrición y fisioterapía | Perales de Tajuña',
+  description:
+    'Cuidar tu cuerpo, comienza con saber entenderlo. Los mayores expertos en nutrición y fisioterapía. El objetivo de Vitalitty es preservar la salud del paciente.',
+};
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
+<BaseLayout {...seo} twitterCard="summary_large_image">
+  <section class="px-4 pt-8">
+    <div
+      class="relative mx-auto flex min-h-[420px] max-w-[980px] items-center justify-center overflow-hidden md:min-h-[560px]"
+    >
+      <Image
+        src={hero}
+        alt=""
+        widths={[640, 980, 1960]}
+        sizes="(max-width: 980px) 100vw, 980px"
+        loading="eager"
+        fetchpriority="high"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+      <div class="absolute inset-0 bg-text/40" aria-hidden="true"></div>
+      <div class="relative px-6 text-center text-bg">
+        <h1
+          class="font-heading text-4xl leading-tight font-normal md:text-[66px]"
+        >
+          Cuidar tu cuerpo, comienza con saber entenderlo.
+        </h1>
+        <p class="mt-6 font-heading text-xl md:text-3xl">
+          Nutrición, fisioterapia y entrenamiento personal
+        </p>
+        <a
+          href="#conocenos"
+          class="mt-10 inline-flex flex-col items-center gap-2 text-sm text-bg transition-opacity hover:opacity-80"
+        >
+          Conócenos
+          <svg
+            class="h-5 w-3"
+            viewBox="0 0 12 20"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M6 0v18m0 0L1 13m5 5 5-5"
+              stroke="currentColor"
+              stroke-width="1.2"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="conocenos"
+    class="mt-8 scroll-mt-20 bg-bg-alt px-4 py-12"
+    aria-label="Conócenos"
+  >
+    <div class="mx-auto grid max-w-[980px] gap-12 md:grid-cols-2">
+      {equipo.map((miembro) => <TeamMember miembro={miembro} />)}
+    </div>
+  </section>
+
+  <MotivosSlideshow motivos={motivos} />
+
+  <TestimonialCarousel testimonios={testimonios} />
+
+  <section class="bg-bg-alt px-4 py-12" aria-labelledby="contacto-title">
+    <div class="mx-auto max-w-[980px]">
+      <h2
+        id="contacto-title"
+        class="text-center font-heading text-3xl font-normal"
+      >
+        Información de contacto
+      </h2>
+
+      <MapEmbed class="mx-auto mt-8 h-[300px] max-w-[840px]" />
+
+      <div
+        class="mx-auto mt-10 grid max-w-[840px] gap-8 border-t border-text pt-8 text-center md:grid-cols-3 md:divide-x md:divide-text"
+      >
+        <div class="px-4">
+          <h3 class="font-heading text-lg font-normal">Teléfono y Whatsapp</h3>
+          <ul class="mt-4 space-y-3 text-sm text-text-muted">
+            {
+              contacto.telefonos.map((t) => (
+                <li>
+                  {t.area}:{' '}
+                  <a
+                    href={`tel:${t.tel}`}
+                    class="text-text underline hover:text-primary-dark"
+                  >
+                    {t.texto}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div class="px-4">
+          <h3 class="font-heading text-lg font-normal">Email</h3>
+          <p class="mt-4 text-sm">
+            <a
+              href={`mailto:${contacto.email}`}
+              class="text-text underline hover:text-primary-dark"
+              >{contacto.email}</a
+            >
+          </p>
+        </div>
+        <div class="px-4">
+          <h3 class="font-heading text-lg font-normal">Dirección</h3>
+          <ul class="mt-4 space-y-4 text-sm text-text-muted">
+            {
+              contacto.direcciones.map((d) => (
+                <li>
+                  <strong class="font-semibold text-text">{d.area}:</strong>{' '}
+                  {d.calle}
+                  <br />({d.localidad})
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
