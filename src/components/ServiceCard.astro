@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets';
+import { resolveImage } from '../lib/images';
+import type { Servicio } from '../lib/types';
+
+interface Props {
+  servicio: Servicio;
+}
+
+const { servicio } = Astro.props;
+const icono = servicio.icono ? resolveImage(servicio.icono) : undefined;
+---
+
+<article class="flex h-full flex-col items-center px-4 py-8 text-center">
+  {
+    icono &&
+      (servicio.enlace ? (
+        <a href={servicio.enlace} tabindex="-1" aria-hidden="true">
+          <Image src={icono} alt="" width={64} height={64} class="h-16 w-16" />
+        </a>
+      ) : (
+        <Image src={icono} alt="" width={64} height={64} class="h-16 w-16" />
+      ))
+  }
+  <h2 class="mt-5 font-heading text-xl font-normal text-text">
+    {servicio.nombre}
+  </h2>
+  <p class="mt-4 text-base leading-[1.8] text-text">{servicio.descripcion}</p>
+  {
+    servicio.precio && (
+      <p class="mt-3 font-heading text-lg text-primary-dark">
+        {servicio.precio}
+      </p>
+    )
+  }
+  {
+    servicio.enlace && (
+      <p class="mt-2 text-base leading-[1.8]">
+        <a
+          href={servicio.enlace}
+          class="font-bold text-text underline transition-colors hover:text-primary-dark"
+        >
+          {servicio.enlaceTexto ?? 'Saber más'}
+          <span class="sr-only"> sobre {servicio.nombre}</span>
+        </a>
+      </p>
+    )
+  }
+</article>

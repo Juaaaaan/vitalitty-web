@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import logo from '../assets/images/logo-vitalitty.jpg';
+
 const currentPath = Astro.url.pathname;
 ---
 
@@ -7,11 +10,13 @@ const currentPath = Astro.url.pathname;
     class="mx-auto flex max-w-[980px] items-center justify-between px-4 py-3"
   >
     <a href="/" class="shrink-0">
-      <img
-        src="/images/logo-vitalitty.jpg"
+      <Image
+        src={logo}
         alt="Vitalitty - Nutrición y Fisioterapia"
-        width="57"
-        height="50"
+        width={57}
+        height={50}
+        densities={[1, 2]}
+        loading="eager"
         class="h-[50px] w-auto"
       />
     </a>

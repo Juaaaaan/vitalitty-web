@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import banner from '../assets/images/banners/contacto.jpg';
+import MapEmbed from '../components/MapEmbed.astro';
+import contacto from '../data/contacto.json';
+
+const seo = {
+  title: 'Contacto | Vitalitty',
+  description:
+    'Puedes ponerte en contacto con nosotros consultando cualquier duda e inquietud que tengas. Solo hace falta que rellenes el formulario en Vitalitty para que podamos resolverlas.',
+};
+---
+
+<BaseLayout {...seo} twitterCard="summary_large_image">
+  <PageHeader title="Contacto" image={banner} />
+
+  <section class="px-4 py-12" aria-label="Datos de contacto">
+    <div class="mx-auto grid max-w-[980px] gap-10 px-2 md:grid-cols-3">
+      <div>
+        <h2 class="font-heading text-2xl font-normal">Dirección</h2>
+        <address
+          class="mt-4 text-sm leading-relaxed text-text-muted not-italic"
+        >
+          {contacto.direccionPostal.map((linea) => <p>{linea}</p>)}
+        </address>
+      </div>
+
+      <div>
+        <h2 class="font-heading text-2xl font-normal">Contacto</h2>
+        <ul class="mt-4 space-y-1 leading-relaxed text-text-muted">
+          {
+            contacto.telefonos.map((t) => (
+              <li>
+                {t.area}:{' '}
+                <a
+                  href={`tel:${t.tel}`}
+                  class="underline hover:text-primary-dark"
+                >
+                  {t.texto}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="mt-2 text-sm">
+          <a
+            href={`mailto:${contacto.email}`}
+            class="text-text-muted hover:text-primary-dark hover:underline"
+            >{contacto.email}</a
+          >
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-heading text-2xl font-normal">Apertura</h2>
+        <dl class="mt-4 space-y-3 text-sm leading-relaxed text-text-muted">
+          {
+            contacto.horario.map((h) => (
+              <div class="grid grid-cols-[6.5rem_1fr] gap-3">
+                <dt>{h.dias}</dt>
+                <dd>
+                  {h.horas.map((hora) => (
+                    <span class="block">{hora}</span>
+                  ))}
+                </dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="px-4 pb-16" aria-label="Formulario y mapa">
+    <div class="mx-auto grid max-w-[980px] gap-10 md:grid-cols-2">
+      <div id="formulario-contacto"></div>
+      <MapEmbed class="h-full min-h-[360px]" />
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "jesus-garcia",
+    "nombre": "Jesús García",
+    "descripcion": [
+      "CEO de Vitalitty",
+      "Diplomado en Nutrición Humana y Dietética por la Universidad Complutense de Madrid",
+      "Experto en Ayudas Ergogénicas y Suplementación Deportiva",
+      "Especialista en Nutrición Deportiva para Deportes de Larga Distancia",
+      "Especialista en Suplementación para la Ganancia de Masa Muscular y Pérdida de Grasa"
+    ],
+    "imagen": "/images/equipo/jesus-garcia.jpg",
+    "enlace": "/nutricion"
+  },
+  {
+    "id": "ruben-horcajo",
+    "nombre": "Rubén Horcajo",
+    "descripcion": [
+      "Graduado en Fisioterapia por la Universidad Complutense de Madrid",
+      "Máster en Fisioterapia Deportiva y Traumatológica",
+      "Especialista en Fisioterapia Invasiva",
+      "Experto en Ecografía músculoesquelética",
+      "Especialista en Terapia Manual Ortopédica por la Universidad Curtían (Australia)",
+      "Diploma Fifa Football Medicine"
+    ],
+    "imagen": "/images/equipo/ruben-horcajo.jpg",
+    "enlace": "/fisioterapia"
+  }
+]

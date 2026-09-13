@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import banner from '../assets/images/banners/recomposicion-online.jpg';
+import programa from '../data/recomposicion-online.json';
+
+type Parrafo = string | { numero: string; negrita: string; texto: string };
+
+const seo = {
+  title: 'Nutrición Online | Vitalitty',
+  description:
+    'En vitalitty te asesoramos para que puedas cumplir tus objetivos. Jesús Arsenio, experto nutricionista te enseñará principios básicos de la nutrición y cómo mejorar la ingesta de nutrientes',
+};
+---
+
+<BaseLayout {...seo} twitterCard="summary">
+  <PageHeader title={programa.titulo} id="nutricin" image={banner} />
+
+  <section class="px-4 pt-16 pb-16" aria-labelledby="programa-title">
+    <div class="mx-auto max-w-[800px]">
+      <h2
+        id="programa-title"
+        class="text-center font-heading text-4xl font-normal"
+      >
+        {programa.subtitulo}
+      </h2>
+
+      {
+        programa.secciones.map((seccion) => (
+          <div class="mt-12 grid gap-4 md:grid-cols-[14rem_1fr] md:gap-10">
+            <div>
+              <h3 class="font-heading text-lg font-normal">{seccion.titulo}</h3>
+              {seccion.subtitulo && (
+                <p class="mt-1 text-text-muted">{seccion.subtitulo}</p>
+              )}
+            </div>
+            <div class="text-text-muted">
+              {(seccion.parrafos as Parrafo[]).map((parrafo) =>
+                typeof parrafo === 'string' ? (
+                  <p class="mb-4 leading-[1.8]">{parrafo}</p>
+                ) : (
+                  <p class="mb-6 leading-[1.8]">
+                    {parrafo.numero}{' '}
+                    <strong class="font-semibold text-text">
+                      {parrafo.negrita}
+                    </strong>{' '}
+                    {parrafo.texto}
+                  </p>
+                ),
+              )}
+              {seccion.lista && (
+                <>
+                  <p class="mt-6 text-center text-text">
+                    {seccion.listaTitulo}
+                  </p>
+                  <ul class="mt-2 leading-[1.8]">
+                    {seccion.lista.map((item) => (
+                      <li>- {item}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

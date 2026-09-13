@@ -3,5 +3,30 @@
     "id": 1,
     "nombre": "Beatriz Corrochano",
     "texto": "La experiencia con Jesús está siendo muy positiva. Llevo varios meses con el y he notado un gran cambio (peso, digestiones, energía...). Se adapta a tus gustos, horarios y necesidades, haciendo que el plan sea muy fácil de seguir. Lo recomiendo 100%"
+  },
+  {
+    "id": 2,
+    "nombre": "José España",
+    "texto": "Como deportista profesional para mí se ha convertido en una herramienta indispensable para lograr el mayor rendimiento con el menor riesgo de lesiones y sin pasar hambre."
+  },
+  {
+    "id": 3,
+    "nombre": "Claudia Lopes",
+    "texto": "Mi experiencia es de 100. Desde que visito a Jesús mi vida ha mejorado en todos los aspectos. El trato que da es super cercano, se nota que sabe de lo que habla y gracias a él he recuperado la confianza en mi misma y me gusta cada vez mas lo que veo en el espejo cuando me miro. He sido capaz de cambiar mi estilo de vida y no puedo estar mas contenta. Recomendable 200%"
+  },
+  {
+    "id": 4,
+    "nombre": "Irene López-Ventura",
+    "texto": "¡Un trato cercano y excelente! Muy contenta con los resultados obtenidos a día de hoy. Las dietas son muy variadas y Jesús hace que todo sea más fácil con su gran profesionalidad. Sin ninguna duda, lo recomiendo al 100%. Gracias por enseñarme a comer de manera saludable."
+  },
+  {
+    "id": 5,
+    "nombre": "Antonio Guerrero",
+    "texto": "Sin palabras para describir su profesionalidad y brillantez. Desde la primera consulta que tuve hace muchos años percibí la sensación de encontrarme en manos de un equipo que realmente saben lo que hacen, algo que se confirma con los resultados obtenidos. Mención especial a Jesús: gracias por tu cercanía y sencillez, por transmitir y poner en práctica tanta sabiduría, además de generar una confianza indescriptible que se vuelve aún más sólida en cada sesión."
+  },
+  {
+    "id": 6,
+    "nombre": "Sergio Ávila",
+    "texto": "Llevo pocos meses trabajando con Jesus y los resultados están siendo excelentes. Desde el principio, supo adaptar el plan nutricional a mis objetivos teniendo en cuenta mi rutina y mi estilo de vida. Además, ha sido muy atento y cercano, resolviendo todas mis dudas y ajustando la dieta según mi evolución. No solo he notado mejoras físicas, sino también en mi rendimiento en el gimnasio. ¡Muy recomendable!"
   }
 ]

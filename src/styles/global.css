@@ -42,3 +42,35 @@
   --font-accent: 'Proxima Nova', system-ui, sans-serif;
   --font-small: 'DIN Next', 'Arial Narrow', sans-serif;
 }
+
+/* Shared carousel styles (see src/scripts/carousel.ts) */
+@layer components {
+  .carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel-track > [data-slide] {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+  }
+  snap-carousel:not([data-enhanced]) [data-prev],
+  snap-carousel:not([data-enhanced]) [data-next] {
+    display: none;
+  }
+  .carousel-dot {
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 9999px;
+    border: 1px solid currentColor;
+    background: transparent;
+    cursor: pointer;
+  }
+  .carousel-dot[aria-current='true'] {
+    background: currentColor;
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "titulo": "Recomposición Online",
+  "subtitulo": "Plan de 95 días",
+  "secciones": [
+    {
+      "titulo": "¿En qué consiste?",
+      "parrafos": [
+        "Es una metodología diseñada para personas que quieren mejorar su composición corporal y sus hábitos sin necesidad de acudir a consulta presencial pero con un seguimiento real, constante y personalizado.",
+        "Es un formato que permite avanzar con flexibilidad, manteniendo la estructura, la guía profesional y un acompañamiento continuo."
+      ]
+    },
+    {
+      "titulo": "¿Como funciona?",
+      "subtitulo": "Paso a paso.",
+      "parrafos": [
+        {
+          "numero": "1.",
+          "negrita": "Compra el paquete.",
+          "texto": "Tras la compra, recibirás una ficha inicial para completar con tus objetivos, medidas, hábitos, gustos, etc.."
+        },
+        {
+          "numero": "2.",
+          "negrita": "Rellena el cuestionario inicial.",
+          "texto": "Cuando recibamos tu ficha completa, en un plazo máximo de 96 horas laborables te enviaremos tu primer plan nutricional personalizado. Ese día comienza oficialmente tu programa de 96 días."
+        }
+      ]
+    },
+    {
+      "titulo": "¿Cómo se estructura el seguimiento?",
+      "subtitulo": "Día por día.",
+      "parrafos": [
+        "El programa está dividido en 3 bloques de trabajo de 3 semanas cada uno, con actualización del plan en cada fase."
+      ],
+      "listaTitulo": "Cronograma:",
+      "lista": [
+        "Día 0: recibes el primer plan",
+        "Día 20: envías tu primer reporte",
+        "Día 25: recibes el segundo plan",
+        "Día 45: envías tu segundo reporte",
+        "Día 50: recibes el tercer plan",
+        "Día 70: último reporte",
+        "Día 75: recibes el último plan",
+        "Día 95: cierre del programa"
+      ]
+    },
+    {
+      "titulo": "¿Qué incluye?",
+      "subtitulo": "Pack completo: 120€",
+      "parrafos": [],
+      "listaTitulo": "Pack Online:",
+      "lista": [
+        "Plan nutricional inicial",
+        "3 actualizaciones completas del plan (cada 3 semanas)",
+        "Revisión de progresos y reportes en cada fase",
+        "Canal de comunicación telemática (Whatsapp o email, 1 vez por semana)",
+        "Flexibilidad horaria",
+        "Sin desplazamientos ni cita previa",
+        "Enfoque progresivo para evitar estancamiento",
+        "Ahorro con respecto a metodología presencial"
+      ]
+    }
+  ]
+}

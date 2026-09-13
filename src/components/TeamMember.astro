@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets';
+import { resolveImage } from '../lib/images';
+import type { MiembroEquipo } from '../lib/types';
+
+interface Props {
+  miembro: MiembroEquipo;
+}
+
+const { miembro } = Astro.props;
+---
+
+<article class="flex flex-col items-center text-center">
+  <Image
+    src={resolveImage(miembro.imagen)}
+    alt={`Foto de ${miembro.nombre}`}
+    widths={[256, 512]}
+    sizes="256px"
+    class="h-64 w-64 rounded-full object-cover"
+  />
+  <h3 class="mt-6 font-heading text-2xl font-normal">
+    <a
+      href={miembro.enlace}
+      class="inline-block border-b-2 border-primary px-3 pb-1 text-text transition-colors hover:text-primary-dark"
+    >
+      {miembro.nombre}
+    </a>
+  </h3>
+  <ul class="mt-4 space-y-1 text-sm leading-relaxed text-text">
+    {miembro.descripcion.map((linea) => <li>{linea}</li>)}
+  </ul>
+</article>
