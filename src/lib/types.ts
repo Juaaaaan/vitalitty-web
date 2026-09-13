@@ -19,7 +19,8 @@ export interface Colaborador {
   id: string;
   nombre: string;
   logo: string;
-  enlace: string;
+  /** External profile/site. Omitted when the original Wix card had no link. */
+  enlace?: string;
 }
 
 export interface MiembroEquipo {

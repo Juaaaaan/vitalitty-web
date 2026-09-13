@@ -4,10 +4,19 @@ import { LIMITES, type Origen } from '../lib/contact';
 
 interface Props {
   origen: Origen;
+  /** Optional heading shown above the form. */
+  title?: string;
+  /** Message shown after a successful submission. */
+  successMessage?: string;
   class?: string;
 }
 
-const { origen, class: className } = Astro.props;
+const {
+  origen,
+  title,
+  successMessage = '¡Gracias por tu mensaje!',
+  class: className,
+} = Astro.props;
 const uid = `cf-${origen}`;
 
 const inputClass =
@@ -18,13 +27,25 @@ const labelClass = 'block text-sm text-text-muted';
 <contact-form
   class:list={['block', className]}
   data-sitekey={TURNSTILE_SITE_KEY ?? ''}
+  data-success={successMessage}
 >
+  {
+    title && (
+      <h2
+        id={`${uid}-title`}
+        class="mb-8 text-center font-heading text-2xl font-normal"
+      >
+        {title}
+      </h2>
+    )
+  }
   <form
     action="/api/contact"
     method="post"
     novalidate
     class="mx-auto grid max-w-[440px] gap-6"
-    aria-label="Formulario de contacto"
+    aria-label={title ? undefined : 'Formulario de contacto'}
+    aria-labelledby={title ? `${uid}-title` : undefined}
   >
     <input type="hidden" name="origen" value={origen} />
 
@@ -127,7 +148,8 @@ const labelClass = 'block text-sm text-text-muted';
       </label>
     </div>
 
-    <div data-turnstile class="min-h-[65px]"></div>
+    <div data-turnstile class:list={[TURNSTILE_SITE_KEY && 'min-h-[65px]']}>
+    </div>
 
     <div class="flex flex-wrap items-center gap-4">
       <button

@@ -105,12 +105,9 @@ export function initContactForm(root: HTMLElement) {
     event.preventDefault();
 
     if (!form.checkValidity()) {
-      const firstInvalid = form.querySelector<HTMLElement>(':invalid');
-      const consent = form.elements.namedItem(
-        'consentimiento',
-      ) as HTMLInputElement;
+      const firstInvalid = form.querySelector<HTMLInputElement>(':invalid');
       setStatus(
-        !consent.checked
+        firstInvalid?.name === 'consentimiento'
           ? 'Debes aceptar la política de privacidad.'
           : 'Revisa los campos obligatorios marcados con *.',
         'error',
@@ -151,7 +148,7 @@ export function initContactForm(root: HTMLElement) {
       };
       if (res.ok && body.success) {
         form.reset();
-        setStatus('¡Gracias por tu mensaje!', 'ok');
+        setStatus(root.dataset.success ?? '¡Gracias por tu mensaje!', 'ok');
       } else {
         setStatus(
           body.error ?? 'Error al enviar el mensaje. Inténtalo de nuevo.',

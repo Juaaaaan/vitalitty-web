@@ -84,7 +84,7 @@
 - [x] T027 [P] [US2] Add ContactForm (origen="nutricion") to src/pages/nutricion.astro
 - [x] T028 [P] [US2] Add ContactForm (origen="fisioterapia") to src/pages/fisioterapia.astro
 - [x] T029 [P] [US2] Add ContactForm (origen="contacto") to src/pages/contacto.astro
-- [ ] T029b [P] [US2] Add ContactForm (origen="colaboraciones") to src/pages/colaboraciones.astro — _se completa en Fase 8 junto a T046, cuando exista la página_
+- [x] T029b [P] [US2] Add ContactForm (origen="colaboraciones") to src/pages/colaboraciones.astro — _completado en Fase 8 junto a T046_
 
 **Checkpoint**: Forms submit on all 4 pages, email arrives with correct origen, anti-spam rejects bots, RGPD checkbox enforced.
 
@@ -152,8 +152,8 @@
 
 ### Implementation for User Story 6
 
-- [ ] T045 [P] [US6] Create CollaboratorCard component in src/components/CollaboratorCard.astro — props: colaborador (nombre, logo, enlace)
-- [ ] T046 [US6] Create Colaboraciones page in src/pages/colaboraciones.astro — 8 CollaboratorCards from colaboradores.json, ContactForm (origen="colaboraciones"). SEO meta from Wix.
+- [x] T045 [P] [US6] Create CollaboratorCard component in src/components/CollaboratorCard.astro — props: colaborador (nombre, logo, enlace)
+- [x] T046 [US6] Create Colaboraciones page in src/pages/colaboraciones.astro — 8 CollaboratorCards from colaboradores.json, ContactForm (origen="colaboraciones"). SEO meta from Wix.
 
 **Checkpoint**: 8 collaborator cards visible with working external links. Form sends email with origen=colaboraciones.
 
