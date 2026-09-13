@@ -53,6 +53,7 @@ class SnapCarousel extends HTMLElement {
     this.addEventListener('focusout', () => (this.paused = false));
 
     this.setAttribute('data-enhanced', '');
+    window.addEventListener('resize', () => this.update(), { passive: true });
     this.update();
     this.startAutoplay();
   }
@@ -107,6 +108,8 @@ class SnapCarousel extends HTMLElement {
   }
 
   private update() {
+    // Follow the active slide's height so short slides don't leave a gap.
+    this.track.style.height = `${this.slides[this.index].offsetHeight}px`;
     this.slides.forEach((slide, i) => {
       const active = i === this.index;
       slide.setAttribute('aria-hidden', String(!active));

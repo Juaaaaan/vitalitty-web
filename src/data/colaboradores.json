@@ -6,22 +6,9 @@
     "enlace": "https://www.instagram.com/pintogoldbats/?hl=es"
   },
   {
-    "id": "camioneros-de-coslada",
-    "nombre": "Camioneros de coslada",
-    "logo": "/images/colaboradores/camioneros-de-coslada.png",
-    "enlace": "https://www.camionerosdecoslada.com/"
-  },
-  {
     "id": "sons-of-running",
     "nombre": "Sons of Running",
-    "logo": "/images/colaboradores/sons-of-running.png",
-    "enlace": "#"
-  },
-  {
-    "id": "osos-de-rivas",
-    "nombre": "Osos de rivas",
-    "logo": "/images/colaboradores/osos-de-rivas.png",
-    "enlace": "https://www.instagram.com/ososrivas"
+    "logo": "/images/colaboradores/sons-of-running.png"
   },
   {
     "id": "pelayo-bucero",
@@ -30,16 +17,28 @@
     "enlace": "https://www.instagram.com/_pela09__"
   },
   {
-    "id": "numerentur",
-    "nombre": "Numerentur",
-    "logo": "/images/colaboradores/numerentur.png",
-    "enlace": "https://numerentur.org/"
-  },
-  {
     "id": "r5-personal-trainer",
     "nombre": "R5 - Personal Trainer",
     "logo": "/images/colaboradores/r5-personal-trainer.jpg",
     "enlace": "https://www.instagram.com/jorgeangles01/"
+  },
+  {
+    "id": "camioneros-de-coslada",
+    "nombre": "Camioneros de coslada",
+    "logo": "/images/colaboradores/camioneros-de-coslada.png",
+    "enlace": "https://www.camionerosdecoslada.com/"
+  },
+  {
+    "id": "osos-de-rivas",
+    "nombre": "Osos de rivas",
+    "logo": "/images/colaboradores/osos-de-rivas.png",
+    "enlace": "https://www.instagram.com/ososrivas"
+  },
+  {
+    "id": "numerentur",
+    "nombre": "Numerentur",
+    "logo": "/images/colaboradores/numerentur.png",
+    "enlace": "https://numerentur.org/"
   },
   {
     "id": "tu-vida-en-comic",

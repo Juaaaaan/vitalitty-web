@@ -1,0 +1,187 @@
+---
+import { TURNSTILE_SITE_KEY } from 'astro:env/client';
+import { LIMITES, type Origen } from '../lib/contact';
+
+interface Props {
+  origen: Origen;
+  /** Optional heading shown above the form. */
+  title?: string;
+  /** Message shown after a successful submission. */
+  successMessage?: string;
+  class?: string;
+}
+
+const {
+  origen,
+  title,
+  successMessage = '¡Gracias por tu mensaje!',
+  class: className,
+} = Astro.props;
+const uid = `cf-${origen}`;
+
+const inputClass =
+  'block w-full border-0 border-b border-text-muted bg-transparent px-1 py-2 text-base text-text placeholder:text-text-muted focus:border-primary-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-dark';
+const labelClass = 'block text-sm text-text-muted';
+---
+
+<contact-form
+  class:list={['block', className]}
+  data-sitekey={TURNSTILE_SITE_KEY ?? ''}
+  data-success={successMessage}
+>
+  {
+    title && (
+      <h2
+        id={`${uid}-title`}
+        class="mb-8 text-center font-heading text-2xl font-normal"
+      >
+        {title}
+      </h2>
+    )
+  }
+  <form
+    action="/api/contact"
+    method="post"
+    novalidate
+    class="mx-auto grid max-w-[440px] gap-6"
+    aria-label={title ? undefined : 'Formulario de contacto'}
+    aria-labelledby={title ? `${uid}-title` : undefined}
+  >
+    <input type="hidden" name="origen" value={origen} />
+
+    <div class="grid gap-6 sm:grid-cols-2">
+      <div>
+        <label for={`${uid}-nombre`} class={labelClass}>Nombre*</label>
+        <input
+          id={`${uid}-nombre`}
+          name="nombre"
+          type="text"
+          required
+          maxlength={LIMITES.nombre}
+          autocomplete="given-name"
+          class={inputClass}
+        />
+      </div>
+      <div>
+        <label for={`${uid}-apellido`} class={labelClass}
+          >Primer Apellido*</label
+        >
+        <input
+          id={`${uid}-apellido`}
+          name="apellido"
+          type="text"
+          required
+          maxlength={LIMITES.apellido}
+          autocomplete="family-name"
+          class={inputClass}
+        />
+      </div>
+    </div>
+
+    <div>
+      <label for={`${uid}-email`} class={labelClass}>Email*</label>
+      <input
+        id={`${uid}-email`}
+        name="email"
+        type="email"
+        required
+        maxlength={LIMITES.email}
+        autocomplete="email"
+        class={inputClass}
+      />
+    </div>
+
+    <div>
+      <label for={`${uid}-mensaje`} class={labelClass}
+        >Aquí, puedes escribir lo que quieras*</label
+      >
+      <textarea
+        id={`${uid}-mensaje`}
+        name="mensaje"
+        rows="3"
+        required
+        maxlength={LIMITES.mensaje}
+        class={inputClass}></textarea>
+    </div>
+
+    <div>
+      <label for={`${uid}-telefono`} class={labelClass}>Teléfono</label>
+      <input
+        id={`${uid}-telefono`}
+        name="telefono"
+        type="tel"
+        maxlength={LIMITES.telefono}
+        autocomplete="tel"
+        pattern="[+]?[\d\s().\-]{6,20}"
+        class={inputClass}
+      />
+    </div>
+
+    <!-- Honeypot: hidden from people and assistive tech, bots tend to fill it -->
+    <div
+      class="absolute -left-[9999px] h-px w-px overflow-hidden"
+      aria-hidden="true"
+    >
+      <label for={`${uid}-honey`}>No rellenar este campo</label>
+      <input
+        id={`${uid}-honey`}
+        name="_honey"
+        type="text"
+        tabindex="-1"
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="flex items-start gap-3">
+      <input
+        id={`${uid}-consentimiento`}
+        name="consentimiento"
+        type="checkbox"
+        required
+        class="mt-1 h-4 w-4 shrink-0 accent-primary-dark"
+      />
+      <label for={`${uid}-consentimiento`} class="text-sm leading-relaxed">
+        He leído y acepto la <a
+          href="/politica-privacidad"
+          class="underline hover:text-primary-dark">política de privacidad</a
+        >. Los datos se usarán únicamente para responder a tu consulta.
+      </label>
+    </div>
+
+    <div data-turnstile class:list={[TURNSTILE_SITE_KEY && 'min-h-[65px]']}>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-4">
+      <button
+        type="submit"
+        class="bg-text px-12 py-2.5 text-sm text-bg transition-colors hover:bg-primary-darker focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-dark disabled:cursor-wait disabled:opacity-60"
+      >
+        Enviar
+      </button>
+    </div>
+
+    <p data-status role="status" aria-live="polite" class="min-h-6 text-sm"></p>
+  </form>
+  <noscript>
+    <p class="mx-auto mt-4 max-w-[440px] text-sm">
+      Para enviar el formulario necesitas activar JavaScript. También puedes
+      escribirnos a <a href="mailto:info@vitalitty.es" class="underline"
+        >info@vitalitty.es</a
+      >.
+    </p>
+  </noscript>
+</contact-form>
+
+<script>
+  import { initContactForm } from '../scripts/contact-form';
+
+  class ContactFormElement extends HTMLElement {
+    connectedCallback() {
+      initContactForm(this);
+    }
+  }
+
+  if (!customElements.get('contact-form')) {
+    customElements.define('contact-form', ContactFormElement);
+  }
+</script>

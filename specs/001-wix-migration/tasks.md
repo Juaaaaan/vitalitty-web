@@ -79,12 +79,12 @@
 
 ### Implementation for User Story 2
 
-- [ ] T025 [US2] Create ContactForm component in src/components/ContactForm.astro — fields: nombre, email, telefono, mensaje, consentimiento checkbox (links to /politica-privacidad), honeypot (_honey hidden), Turnstile widget. Props: origen string. Client-side validation + Turnstile script (client:load island).
-- [ ] T026 [US2] Create API endpoint in src/pages/api/contact.ts — per contracts/api-contact.md: honeypot check → Turnstile verify → input validation → Resend send. Env vars: RESEND_API_KEY, TURNSTILE_SECRET_KEY, CONTACT_TO_EMAIL.
-- [ ] T027 [P] [US2] Add ContactForm (origen="nutricion") to src/pages/nutricion.astro
-- [ ] T028 [P] [US2] Add ContactForm (origen="fisioterapia") to src/pages/fisioterapia.astro
-- [ ] T029 [P] [US2] Add ContactForm (origen="contacto") to src/pages/contacto.astro
-- [ ] T029b [P] [US2] Add ContactForm (origen="colaboraciones") to src/pages/colaboraciones.astro
+- [x] T025 [US2] Create ContactForm component in src/components/ContactForm.astro — fields: nombre, email, telefono, mensaje, consentimiento checkbox (links to /politica-privacidad), honeypot (_honey hidden), Turnstile widget. Props: origen string. Client-side validation + Turnstile script (client:load island).
+- [x] T026 [US2] Create API endpoint in src/pages/api/contact.ts — per contracts/api-contact.md: honeypot check → Turnstile verify → input validation → Resend send. Env vars: RESEND_API_KEY, TURNSTILE_SECRET_KEY, CONTACT_TO_EMAIL.
+- [x] T027 [P] [US2] Add ContactForm (origen="nutricion") to src/pages/nutricion.astro
+- [x] T028 [P] [US2] Add ContactForm (origen="fisioterapia") to src/pages/fisioterapia.astro
+- [x] T029 [P] [US2] Add ContactForm (origen="contacto") to src/pages/contacto.astro
+- [x] T029b [P] [US2] Add ContactForm (origen="colaboraciones") to src/pages/colaboraciones.astro — _completado en Fase 8 junto a T046_
 
 **Checkpoint**: Forms submit on all 4 pages, email arrives with correct origen, anti-spam rejects bots, RGPD checkbox enforced.
 
@@ -98,10 +98,10 @@
 
 ### Implementation for User Story 4
 
-- [ ] T030 [US4] Verify all SEO meta tags on every page match Wix original (title, description, OG, Twitter Card) — audit and fix any discrepancies in BaseLayout props usage
-- [ ] T031 [US4] Configure @astrojs/sitemap in astro.config.mjs with site URL and verify sitemap.xml includes all public routes
-- [ ] T032 [US4] Verify vercel.json rewrites work: /copia-de-nutrición → 200, /blog/categories/sabías-qué → 200
-- [ ] T033 [US4] Run linkinator or similar link checker on build output — fix any broken links
+- [x] T030 [US4] Verify all SEO meta tags on every page match Wix original (title, description, OG, Twitter Card) — audit and fix any discrepancies in BaseLayout props usage
+- [x] T031 [US4] Configure @astrojs/sitemap in astro.config.mjs with site URL and verify sitemap.xml includes all public routes
+- [x] T032 [US4] Verify vercel.json rewrites work: /copia-de-nutrición → 200, /blog/categories/sabías-qué → 200 — _@astrojs/vercel emite Build Output API sin los rewrites de vercel.json: se sustituyen por rutas acentuadas nativas (getStaticPaths) + 301 desde la variante sin acento (astro.config `redirects`)_
+- [x] T033 [US4] Run linkinator or similar link checker on build output — fix any broken links
 
 **Checkpoint**: 0 broken links. All Wix URLs resolve. Sitemap complete. Meta tags match.
 
@@ -115,12 +115,12 @@
 
 ### Implementation for User Story 3
 
-- [ ] T034 [US3] Create content collection config in src/content/config.ts — blog collection schema: title, slug, category (enum), date, description, image?, author?
-- [ ] T035 [US3] Migrate 13 blog posts from Wix to src/content/blog/*.mdx — copy content literal, fill frontmatter (title, slug, category, date, description, image)
-- [ ] T036 [P] [US3] Create BlogCard component in src/components/BlogCard.astro — props: post (title, slug, category, date, description, image)
-- [ ] T037 [US3] Create Blog listing page in src/pages/blog/index.astro — BlogCard list, category filter links, client-side search input. SEO meta.
-- [ ] T038 [US3] Create Blog category page in src/pages/blog/categories/[categoria].astro — getStaticPaths for 4 categories, filtered BlogCard list. SEO meta.
-- [ ] T039 [US3] Create Post detail page in src/pages/post/[slug].astro — render MDX content, SEO meta per post frontmatter
+- [x] T034 [US3] Create content collection config in src/content/config.ts — blog collection schema: title, slug, category (enum), date, description, image?, author?
+- [x] T035 [US3] Migrate 13 blog posts from Wix to src/content/blog/*.mdx — copy content literal, fill frontmatter (title, slug, category, date, description, image)
+- [x] T036 [P] [US3] Create BlogCard component in src/components/BlogCard.astro — props: post (title, slug, category, date, description, image)
+- [x] T037 [US3] Create Blog listing page in src/pages/blog/index.astro — BlogCard list, category filter links, client-side search input. SEO meta.
+- [x] T038 [US3] Create Blog category page in src/pages/blog/categories/[categoria].astro — getStaticPaths for 4 categories, filtered BlogCard list. SEO meta.
+- [x] T039 [US3] Create Post detail page in src/pages/post/[slug].astro — render MDX content, SEO meta per post frontmatter
 
 **Checkpoint**: 13 posts visible. Categories filter correctly. Search works. Post content matches Wix.
 
@@ -134,11 +134,11 @@
 
 ### Implementation for User Story 5
 
-- [ ] T040 [P] [US5] Create CookieBanner island in src/components/CookieBanner.astro — client:load, accept/reject buttons, saves preference to localStorage (cookies-accepted: true/false), hides on subsequent visits
-- [ ] T041 [P] [US5] Create Aviso Legal page in src/pages/aviso-legal.astro with legal text (client-provided or LOPDGDD template). SEO meta.
-- [ ] T042 [P] [US5] Create Política de Privacidad page in src/pages/politica-privacidad.astro with privacy text. SEO meta.
-- [ ] T043 [P] [US5] Create Política de Cookies page in src/pages/politica-cookies.astro with cookie policy text. SEO meta.
-- [ ] T044 [US5] Add CookieBanner to BaseLayout.astro so it appears on every page
+- [x] T040 [P] [US5] Create CookieBanner island in src/components/CookieBanner.astro — client:load, accept/reject buttons, saves preference to localStorage (cookies-accepted: true/false), hides on subsequent visits
+- [x] T041 [P] [US5] Create Aviso Legal page in src/pages/aviso-legal.astro with legal text (client-provided or LOPDGDD template). SEO meta.
+- [x] T042 [P] [US5] Create Política de Privacidad page in src/pages/politica-privacidad.astro with privacy text. SEO meta.
+- [x] T043 [P] [US5] Create Política de Cookies page in src/pages/politica-cookies.astro with cookie policy text. SEO meta.
+- [x] T044 [US5] Add CookieBanner to BaseLayout.astro so it appears on every page
 
 **Checkpoint**: Cookie banner on first visit. Legal pages render. Footer links work. ContactForm RGPD checkbox links to privacy policy.
 
@@ -152,8 +152,8 @@
 
 ### Implementation for User Story 6
 
-- [ ] T045 [P] [US6] Create CollaboratorCard component in src/components/CollaboratorCard.astro — props: colaborador (nombre, logo, enlace)
-- [ ] T046 [US6] Create Colaboraciones page in src/pages/colaboraciones.astro — 8 CollaboratorCards from colaboradores.json, ContactForm (origen="colaboraciones"). SEO meta from Wix.
+- [x] T045 [P] [US6] Create CollaboratorCard component in src/components/CollaboratorCard.astro — props: colaborador (nombre, logo, enlace)
+- [x] T046 [US6] Create Colaboraciones page in src/pages/colaboraciones.astro — 8 CollaboratorCards from colaboradores.json, ContactForm (origen="colaboraciones"). SEO meta from Wix.
 
 **Checkpoint**: 8 collaborator cards visible with working external links. Form sends email with origen=colaboraciones.
 
@@ -163,14 +163,14 @@
 
 **Purpose**: Accessibility hardening, performance optimization, final validation
 
-- [ ] T047 [P] Accessibility audit: verify WCAG 2.1 AA on all pages — keyboard navigation, focus visible, contrast AA, alt text on all images, aria labels on social/menu icons
-- [ ] T048 [P] Image optimization audit: verify all images use Astro <Image> component with AVIF/WebP, responsive sizes, lazy-loading
-- [ ] T049 [P] Responsive audit: test all pages on mobile (375px), tablet (768px), desktop (1280px) — fix layout issues
-- [ ] T050 Run `astro check` — fix any type errors or diagnostics warnings
-- [ ] T051 Run `npm run build` — verify clean production build
-- [ ] T052 Run Lighthouse on all key pages (/, /nutricion, /fisioterapia, /contacto, /blog) — target ≥ 95 in all categories
-- [ ] T053 Run quickstart.md validation scenarios end-to-end
-- [ ] T054 Visual comparison of each migrated page against Wix original — document any deviations in PR
+- [x] T047 [P] Accessibility audit: verify WCAG 2.1 AA on all pages — keyboard navigation, focus visible, contrast AA, alt text on all images, aria labels on social/menu icons
+- [x] T048 [P] Image optimization audit: verify all images use Astro <Image> component with AVIF/WebP, responsive sizes, lazy-loading
+- [x] T049 [P] Responsive audit: test all pages on mobile (375px), tablet (768px), desktop (1280px) — fix layout issues
+- [x] T050 Run `astro check` — fix any type errors or diagnostics warnings
+- [x] T051 Run `npm run build` — verify clean production build
+- [x] T052 Run Lighthouse on all key pages (/, /nutricion, /fisioterapia, /contacto, /blog) — target ≥ 95 in all categories
+- [x] T053 Run quickstart.md validation scenarios end-to-end
+- [x] T054 Visual comparison of each migrated page against Wix original — document any deviations in PR
 
 ---
 

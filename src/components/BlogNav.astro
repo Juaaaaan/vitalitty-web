@@ -1,0 +1,120 @@
+---
+import { CATEGORIAS } from '../data/blog-categorias';
+
+interface Props {
+  /** Active entry: "all" for the full listing, a category id, or "none" (post pages). */
+  current?: string;
+  /** Render the client-side search box (listing pages only). */
+  search?: boolean;
+}
+
+const { current = 'all', search = false } = Astro.props;
+const linkClass =
+  'whitespace-nowrap font-heading text-base transition-colors hover:text-primary-dark';
+---
+
+<div
+  class="mx-auto flex max-w-[980px] flex-col gap-4 border-b border-border px-4 py-6 md:flex-row md:items-center md:justify-between"
+>
+  <nav aria-label="Categorías del blog" class="overflow-x-auto">
+    <ul class="flex gap-6">
+      <li>
+        <a
+          href="/blog"
+          class:list={[
+            linkClass,
+            current === 'all' ? 'text-text-muted' : 'text-text',
+          ]}
+          aria-current={current === 'all' ? 'page' : undefined}
+          >Todos los posts</a
+        >
+      </li>
+      {
+        CATEGORIAS.map((c) => (
+          <li>
+            <a
+              href={`/blog/categories/${c.slug}`}
+              class:list={[
+                linkClass,
+                current === c.id ? 'text-text-muted' : 'text-text',
+              ]}
+              aria-current={current === c.id ? 'page' : undefined}
+            >
+              {c.nombre}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+
+  {
+    search && (
+      <div class="invisible relative md:w-56" data-blog-search>
+        <label for="blog-search" class="sr-only">
+          Buscar en el blog
+        </label>
+        <svg
+          class="pointer-events-none absolute top-1/2 left-2 h-4 w-4 -translate-y-1/2 text-text-muted"
+          viewBox="0 0 24 24"
+          fill="none"
+          aria-hidden="true"
+        >
+          <circle
+            cx="11"
+            cy="11"
+            r="7"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+          <path
+            d="m20 20-3.5-3.5"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+        <input
+          id="blog-search"
+          type="search"
+          placeholder="Buscar"
+          autocomplete="off"
+          class="w-full border-b border-text-muted bg-transparent py-1.5 pr-2 pl-8 text-sm focus:border-primary-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-dark"
+        />
+      </div>
+    )
+  }
+</div>
+
+<script>
+  const box = document.querySelector<HTMLElement>('[data-blog-search]');
+  const input = box?.querySelector('input');
+  const status = document.querySelector<HTMLElement>('[data-search-status]');
+  const cards = Array.from(
+    document.querySelectorAll<HTMLElement>('[data-post-card]'),
+  );
+
+  const normalize = (s: string) =>
+    s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
+  const haystacks = cards.map((card) => normalize(card.dataset.search ?? ''));
+
+  if (box && input) {
+    box.classList.remove('invisible'); // search only makes sense with JS
+    input.addEventListener('input', () => {
+      const terms = normalize(input.value).split(/\s+/).filter(Boolean);
+      let visible = 0;
+      cards.forEach((card, i) => {
+        const match = terms.every((t) => haystacks[i].includes(t));
+        (card.parentElement as HTMLElement).hidden = !match;
+        if (match) visible += 1;
+      });
+      if (status) {
+        status.textContent = terms.length
+          ? visible
+            ? `${visible} ${visible === 1 ? 'resultado' : 'resultados'}`
+            : 'No se han encontrado posts.'
+          : '';
+      }
+    });
+  }
+</script>

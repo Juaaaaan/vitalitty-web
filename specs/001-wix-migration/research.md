@@ -44,6 +44,8 @@
 
 ### 5. URLs acentuadas
 
+> **Actualización (Fase 5)**: `@astrojs/vercel` genera `.vercel/output/config.json` (Build Output API) sin incorporar los `rewrites` de `vercel.json`. Se sustituye por rutas acentuadas generadas de forma nativa con `getStaticPaths` (el nombre de archivo sigue sin tildes, p. ej. `src/pages/[recomposicion].astro` → `/copia-de-nutrición`) y redirecciones 301 desde la variante sin acento en `astro.config.mjs` (`redirects`). Mismo patrón para posts y categorías con acentos.
+
 **Decision**: Usar nombres de archivo sin acento + rewrites en `vercel.json` (o config de Astro) para servir las URLs acentuadas
 
 **Rationale**: Los archivos con tildes en el nombre dan problemas en algunos OS y herramientas. El rewrite es transparente para el usuario y el crawler.

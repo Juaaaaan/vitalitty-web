@@ -28,6 +28,8 @@ All pages serve HTML with status 200 unless noted. Every page includes: BaseLayo
 
 ## Rewrites (vercel.json)
 
+> **Sustituido en Fase 5** por rutas acentuadas nativas (`getStaticPaths`) + 301 desde la variante sin acento (`redirects` en `astro.config.mjs`). Ver research.md §5.
+
 | Source (preserved URL) | Destination (clean file) |
 |------------------------|--------------------------|
 | `/copia-de-nutrición` | `/copia-de-nutricion` |
