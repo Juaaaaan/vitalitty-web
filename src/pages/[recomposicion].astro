@@ -4,6 +4,15 @@ import PageHeader from '../components/PageHeader.astro';
 import banner from '../assets/images/banners/recomposicion-online.jpg';
 import programa from '../data/recomposicion-online.json';
 
+/**
+ * Serves the original Wix URL `/copia-de-nutrición` natively (accented path
+ * generated at build time) instead of relying on host rewrites. The
+ * unaccented variant 301-redirects here (see `redirects` in astro.config.mjs).
+ */
+export function getStaticPaths() {
+  return [{ params: { recomposicion: 'copia-de-nutrición' } }];
+}
+
 type Parrafo = string | { numero: string; negrita: string; texto: string };
 
 const seo = {

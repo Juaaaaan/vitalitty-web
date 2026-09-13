@@ -98,10 +98,10 @@
 
 ### Implementation for User Story 4
 
-- [ ] T030 [US4] Verify all SEO meta tags on every page match Wix original (title, description, OG, Twitter Card) — audit and fix any discrepancies in BaseLayout props usage
-- [ ] T031 [US4] Configure @astrojs/sitemap in astro.config.mjs with site URL and verify sitemap.xml includes all public routes
-- [ ] T032 [US4] Verify vercel.json rewrites work: /copia-de-nutrición → 200, /blog/categories/sabías-qué → 200
-- [ ] T033 [US4] Run linkinator or similar link checker on build output — fix any broken links
+- [X] T030 [US4] Verify all SEO meta tags on every page match Wix original (title, description, OG, Twitter Card) — audit and fix any discrepancies in BaseLayout props usage
+- [X] T031 [US4] Configure @astrojs/sitemap in astro.config.mjs with site URL and verify sitemap.xml includes all public routes
+- [X] T032 [US4] Verify vercel.json rewrites work: /copia-de-nutrición → 200, /blog/categories/sabías-qué → 200 — _@astrojs/vercel emite Build Output API sin los rewrites de vercel.json: se sustituyen por rutas acentuadas nativas (getStaticPaths) + 301 desde la variante sin acento (astro.config `redirects`)_
+- [X] T033 [US4] Run linkinator or similar link checker on build output — fix any broken links
 
 **Checkpoint**: 0 broken links. All Wix URLs resolve. Sitemap complete. Meta tags match.
 
