@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import CollaboratorCard from '../components/CollaboratorCard.astro';
+import ContactForm from '../components/ContactForm.astro';
+import banner from '../assets/images/banners/colaboraciones.jpg';
+import colaboradores from '../data/colaboradores.json';
+
+const seo = {
+  title: 'Colaboraciones | Vitalitty',
+  description:
+    'Descubre quienes somos y cómo nos ayudamos entre nosotros para conseguir todos los objetivos. ¿Quieres formar parte de Vitalitty?',
+};
+---
+
+<BaseLayout {...seo} twitterCard="summary">
+  <PageHeader title="Colaboraciones" image={banner} />
+
+  <section class="px-4 py-12" aria-label="Colaboradores">
+    <ul
+      class="mx-auto grid max-w-[980px] grid-cols-2 gap-x-6 gap-y-14 md:grid-cols-4"
+    >
+      {
+        colaboradores.map((colaborador) => (
+          <li>
+            <CollaboratorCard colaborador={colaborador} />
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="px-4 pt-4 pb-16">
+    <ContactForm
+      origen="colaboraciones"
+      title="¿Quieres colaborar con nosotros?"
+      successMessage="Gracias por contar con nosotros! Nos pondremos en contacto contigo lo más rápido posible"
+    />
+  </section>
+</BaseLayout>

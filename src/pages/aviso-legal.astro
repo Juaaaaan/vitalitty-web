@@ -1,0 +1,101 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+import Pendiente from '../components/Pendiente.astro';
+import contacto from '../data/contacto.json';
+---
+
+<LegalLayout
+  title="Aviso legal"
+  description="Aviso legal de vitalitty.es: datos identificativos del titular, condiciones de uso, propiedad intelectual y legislación aplicable."
+  updated="2026-09-13"
+>
+  <h2>1. Datos identificativos</h2>
+  <p>
+    En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de
+    Servicios de la Sociedad de la Información y de Comercio Electrónico
+    (LSSI-CE), se informa de los datos del titular de este sitio web:
+  </p>
+  <ul>
+    <li>
+      Titular: <Pendiente dato="razón social o nombre completo del titular" />
+    </li>
+    <li>NIF/CIF: <Pendiente dato="NIF/CIF" /></li>
+    <li>Nombre comercial: Vitalitty</li>
+    <li>
+      Domicilio: {contacto.direccionPostal.join(' ')}{' '}
+      <Pendiente dato="confirmar domicilio fiscal si es distinto" />
+    </li>
+    <li>
+      Email: <a href={`mailto:${contacto.email}`}>{contacto.email}</a>
+    </li>
+    <li>
+      Teléfonos:
+      {
+        contacto.telefonos.map((t, i) => (
+          <>
+            {i > 0 && ' · '}
+            {t.area}: <a href={`tel:${t.tel}`}>{t.texto}</a>
+          </>
+        ))
+      }
+    </li>
+    <li>
+      Datos registrales / colegiación profesional:{' '}
+      <Pendiente
+        dato="nº de colegiado de nutrición y fisioterapia, si aplica"
+      />
+    </li>
+  </ul>
+
+  <h2>2. Objeto</h2>
+  <p>
+    El sitio web <strong>www.vitalitty.es</strong> tiene como finalidad informar sobre
+    los servicios de nutrición y fisioterapia que Vitalitty presta en Perales de Tajuña
+    (Madrid) y facilitar el contacto con el centro. El acceso y uso del sitio atribuye
+    la condición de usuario e implica la aceptación de este aviso legal.
+  </p>
+
+  <h2>3. Condiciones de uso</h2>
+  <p>
+    El usuario se compromete a hacer un uso adecuado de los contenidos y a no
+    emplearlos para actividades ilícitas o contrarias a la buena fe. La
+    información publicada, incluidos los artículos del blog, tiene carácter
+    divulgativo y no sustituye una valoración profesional individualizada.
+  </p>
+
+  <h2>4. Propiedad intelectual e industrial</h2>
+  <p>
+    Los textos, fotografías, logotipos y demás contenidos de este sitio son
+    titularidad de Vitalitty o de terceros que han autorizado su uso. Queda
+    prohibida su reproducción, distribución o transformación sin autorización
+    expresa, salvo para uso personal y privado.
+  </p>
+
+  <h2>5. Enlaces externos</h2>
+  <p>
+    El sitio contiene enlaces a redes sociales y a webs de colaboradores.
+    Vitalitty no se responsabiliza de los contenidos ni de las políticas de
+    privacidad de dichos sitios.
+  </p>
+
+  <h2>6. Responsabilidad</h2>
+  <p>
+    Vitalitty no garantiza la ausencia de interrupciones o errores en el acceso
+    al sitio y no se hace responsable de los daños derivados de un uso indebido
+    del mismo.
+  </p>
+
+  <h2>7. Protección de datos y cookies</h2>
+  <p>
+    El tratamiento de datos personales se describe en la{' '}
+    <a href="/politica-privacidad">política de privacidad</a> y el uso de cookies
+    en la <a href="/politica-cookies">política de cookies</a>.
+  </p>
+
+  <h2>8. Legislación aplicable y jurisdicción</h2>
+  <p>
+    Este aviso legal se rige por la legislación española. Para cualquier
+    controversia, las partes se someten a los juzgados y tribunales que
+    correspondan conforme a la normativa de consumidores y usuarios.
+  </p>
+</LegalLayout>

@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import { resolveImage } from '../lib/images';
+import type { Colaborador } from '../lib/types';
+
+interface Props {
+  colaborador: Colaborador;
+}
+
+const { colaborador } = Astro.props;
+---
+
+<article class="flex h-full flex-col items-center text-center">
+  <Image
+    src={resolveImage(colaborador.logo)}
+    alt={`Logo de ${colaborador.nombre}`}
+    widths={[160, 320]}
+    sizes="160px"
+    class="h-40 w-40 rounded-full object-cover"
+  />
+  <h2 class="mt-6 text-sm tracking-[0.15em] text-text-muted">
+    {colaborador.nombre}
+  </h2>
+  {
+    colaborador.enlace && (
+      <a
+        href={colaborador.enlace}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-5 inline-block border-b-2 border-primary-dark px-3 pb-1 font-heading text-lg text-text transition-colors hover:text-primary-dark"
+      >
+        Ver su web
+        <span class="sr-only">
+          {' '}
+          de {colaborador.nombre} (se abre en una pestaña nueva)
+        </span>
+      </a>
+    )
+  }
+</article>

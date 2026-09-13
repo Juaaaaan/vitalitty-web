@@ -6,7 +6,7 @@ Instrucciones para trabajar en este repositorio con Claude Code.
 
 Migración **1:1** de la web `https://www.vitalitty.es` (actualmente en Wix) a un
 sitio en **Astro**, desplegado en **Vercel**. No es un rediseño: se replica el
-contenido, la estructura y las URLs del original. Ver `.specify/memory/constitution.m` para los
+contenido, la estructura y las URLs del original. Ver `.specify/memory/constitution.md` para los
 principios no negociables.
 
 Vitalitty es una clínica de **nutrición y fisioterapia** en Perales de Tajuña
@@ -14,7 +14,7 @@ Vitalitty es una clínica de **nutrición y fisioterapia** en Perales de Tajuña
 
 ## Stack
 
-- **Astro** (v5, la última) con TypeScript.
+- **Astro** (v7, la última) con TypeScript.
 - Adaptador **@astrojs/vercel** (para los endpoints de formularios como funciones).
 - `@astrojs/sitemap` y `@astrojs/mdx`.
 - Email: **Resend**. Anti-spam: **Cloudflare Turnstile**.

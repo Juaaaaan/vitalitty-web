@@ -1,0 +1,16 @@
+---
+/**
+ * Visible placeholder for legal data only the client can provide.
+ * Intentionally conspicuous so it cannot reach production unnoticed.
+ * TODO(cliente): replace every <Pendiente> before going live.
+ */
+interface Props {
+  dato: string;
+}
+
+const { dato } = Astro.props;
+---
+
+<mark class="bg-warm-light px-1 font-semibold text-text"
+  >[PENDIENTE: {dato}]</mark
+>

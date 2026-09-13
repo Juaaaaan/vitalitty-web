@@ -1,0 +1,94 @@
+---
+/**
+ * Cookie consent banner (RGPD / LOPDGDD, AEPD guidance: accept and reject
+ * with equal prominence). Stores the choice in localStorage under
+ * `cookies-accepted` ("true" | "false") and dispatches a
+ * `cookie-consent` event so future non-essential scripts can wait for it.
+ * Any element with [data-cookie-settings] reopens the banner.
+ */
+---
+
+<section
+  id="cookie-banner"
+  class="fixed inset-x-0 bottom-0 z-[60] border-t border-border bg-bg shadow-[0_-4px_16px_rgb(0_0_0/0.08)]"
+  aria-label="Aviso de cookies"
+  hidden
+>
+  <div
+    class="mx-auto flex max-w-[980px] flex-col gap-4 px-4 py-4 md:flex-row md:items-center md:justify-between"
+  >
+    <p class="text-sm leading-relaxed">
+      Usamos cookies técnicas necesarias para que la web funcione y para
+      proteger los formularios frente al spam. No usamos cookies de análisis ni
+      de publicidad. Más información en nuestra{' '}
+      <a href="/politica-cookies" class="underline hover:text-primary-dark"
+        >política de cookies</a
+      >.
+    </p>
+    <div class="flex shrink-0 gap-3">
+      <button
+        type="button"
+        data-cookie-choice="false"
+        class="border border-text px-5 py-2 text-sm text-text transition-colors hover:bg-bg-alt focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-dark"
+      >
+        Rechazar
+      </button>
+      <button
+        type="button"
+        data-cookie-choice="true"
+        class="border border-text bg-text px-5 py-2 text-sm text-bg transition-colors hover:bg-primary-darker focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-dark"
+      >
+        Aceptar
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  const KEY = 'cookies-accepted';
+  const banner = document.getElementById('cookie-banner');
+
+  const read = (): string | null => {
+    try {
+      return localStorage.getItem(KEY);
+    } catch {
+      return null;
+    }
+  };
+
+  const announce = (accepted: boolean) =>
+    document.dispatchEvent(
+      new CustomEvent('cookie-consent', { detail: { accepted } }),
+    );
+
+  if (banner) {
+    const stored = read();
+    if (stored === null) banner.hidden = false;
+    else announce(stored === 'true');
+
+    banner
+      .querySelectorAll<HTMLButtonElement>('[data-cookie-choice]')
+      .forEach((button) => {
+        button.addEventListener('click', () => {
+          const accepted = button.dataset.cookieChoice === 'true';
+          try {
+            localStorage.setItem(KEY, String(accepted));
+          } catch {
+            // Storage unavailable (private mode): hide for this page view only.
+          }
+          banner.hidden = true;
+          announce(accepted);
+        });
+      });
+
+    document.addEventListener('click', (event) => {
+      const trigger = (event.target as Element).closest(
+        '[data-cookie-settings]',
+      );
+      if (!trigger) return;
+      event.preventDefault();
+      banner.hidden = false;
+      banner.querySelector<HTMLButtonElement>('[data-cookie-choice]')?.focus();
+    });
+  }
+</script>

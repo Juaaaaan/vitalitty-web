@@ -1,0 +1,26 @@
+---
+import contacto from '../data/contacto.json';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div class:list={['overflow-hidden bg-bg-alt', className]}>
+  <iframe
+    src={contacto.mapa.embed}
+    title="Mapa de ubicación de Vitalitty en Perales de Tajuña"
+    loading="lazy"
+    referrerpolicy="no-referrer"
+    class="block h-full min-h-[250px] w-full border-0"></iframe>
+  <p class="px-2 py-1 text-right text-xs">
+    <a
+      href={contacto.mapa.enlace}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-text underline hover:text-primary-dark">Ver mapa ampliado</a
+    >
+  </p>
+</div>

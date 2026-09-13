@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogNav from '../../components/BlogNav.astro';
+import BlogGrid from '../../components/BlogGrid.astro';
+import { getPosts } from '../../lib/blog';
+
+const posts = await getPosts();
+
+const seo = {
+  title: 'Blog | Vitalitty',
+  description:
+    'En Vitalitty siempre estamos creando, innovando y descubriendo nuevas facetas queriendo mostraroslas. En nuestro blog descubrirás un mundo lleno de nuevas recetas saludables y fáciles de hacer junto a los logros de todos nuestros pacientes',
+};
+---
+
+<BaseLayout {...seo} twitterCard="summary">
+  <h1 class="sr-only">Blog</h1>
+  <BlogNav search />
+  <BlogGrid posts={posts} />
+</BaseLayout>

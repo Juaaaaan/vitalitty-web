@@ -1,0 +1,85 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getImage } from 'astro:assets';
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogNav from '../../components/BlogNav.astro';
+import { categoriaPorId } from '../../data/blog-categorias';
+import { formatDate, getPosts } from '../../lib/blog';
+
+// `slug` keeps the original Wix URL, accents included (e.g. /post/bizcocho-de-limón).
+export const getStaticPaths = (async () => {
+  const posts = await getPosts();
+  return posts.map((post) => ({
+    params: { slug: post.data.slug },
+    props: { post },
+  }));
+}) satisfies GetStaticPaths;
+
+const { post } = Astro.props;
+const { title, description, author, date, minutesToRead, categories, image } =
+  post.data;
+const { Content } = await render(post);
+const ogImage = image
+  ? await getImage({ src: image, width: 1200, format: 'jpg' })
+  : undefined;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  ogType="article"
+  ogImage={ogImage?.src}
+  ogImageWidth={ogImage ? Number(ogImage.attributes.width) : undefined}
+  ogImageHeight={ogImage ? Number(ogImage.attributes.height) : undefined}
+  twitterCard="summary_large_image"
+>
+  <BlogNav current="none" />
+
+  <article class="mx-auto max-w-[740px] px-4 py-12">
+    <header>
+      <h1 class="font-heading text-3xl leading-tight font-normal md:text-4xl">
+        {title}
+      </h1>
+      <p class="mt-4 flex flex-wrap gap-x-3 text-sm text-text-muted">
+        <span>{author}</span>
+        <span aria-hidden="true">·</span>
+        <time datetime={date.toISOString()}>{formatDate(date)}</time>
+        {
+          minutesToRead && (
+            <>
+              <span aria-hidden="true">·</span>
+              <span>{minutesToRead} min de lectura</span>
+            </>
+          )
+        }
+      </p>
+    </header>
+
+    <div class="prose-content mt-8">
+      <Content />
+    </div>
+
+    {
+      categories.length > 0 && (
+        <footer class="mt-12 border-t border-border pt-6">
+          <ul class="flex flex-wrap gap-3" aria-label="Categorías">
+            {categories.map((id) => {
+              const c = categoriaPorId(id);
+              return (
+                <li>
+                  <a
+                    href={`/blog/categories/${c.slug}`}
+                    class="inline-block border border-text-muted px-3 py-1 text-sm hover:border-primary-dark hover:text-primary-dark"
+                  >
+                    {c.nombre}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </footer>
+      )
+    }
+  </article>
+</BaseLayout>

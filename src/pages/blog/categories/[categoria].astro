@@ -1,0 +1,32 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BlogNav from '../../../components/BlogNav.astro';
+import BlogGrid from '../../../components/BlogGrid.astro';
+import { CATEGORIAS } from '../../../data/blog-categorias';
+import { getPosts } from '../../../lib/blog';
+
+// `slug` keeps the original Wix accents (e.g. /blog/categories/sabías-qué).
+export const getStaticPaths = (async () => {
+  const posts = await getPosts();
+  return CATEGORIAS.map((categoria) => ({
+    params: { categoria: categoria.slug },
+    props: {
+      categoria,
+      posts: posts.filter((p) => p.data.categories.includes(categoria.id)),
+    },
+  }));
+}) satisfies GetStaticPaths;
+
+const { categoria, posts } = Astro.props;
+---
+
+<BaseLayout
+  title={categoria.nombre}
+  description={`Posts de la categoría ${categoria.nombre} en el blog de Vitalitty.`}
+  twitterCard="summary_large_image"
+>
+  <h1 class="sr-only">{categoria.nombre}</h1>
+  <BlogNav current={categoria.id} search />
+  <BlogGrid posts={posts} />
+</BaseLayout>

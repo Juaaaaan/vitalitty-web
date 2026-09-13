@@ -1,0 +1,22 @@
+[
+  {
+    "id": "somos-un-equipo",
+    "titulo": "SOMOS UN EQUIPO",
+    "texto": "Trabajamos unidos y conjuntamente para llegar al mismo objetivo y por supuesto, para cumplirlo."
+  },
+  {
+    "id": "nos-adaptamos",
+    "titulo": "NOS ADAPTAMOS A TÍ",
+    "texto": "Una de nuestras mayores habilidades. Somos flexibles a los cambios y nos adaptamos con rapidez y facilidad."
+  },
+  {
+    "id": "continuo-aprendizaje",
+    "titulo": "ESTAMOS EN CONTINUO APRENDIZAJE",
+    "texto": "Nunca dejamos de aprender. Nos actualizamos al presente y adaptamos nuestro trabajo a ello. Muchos de vosotros nos enseñáis grandes cosas."
+  },
+  {
+    "id": "mas-alla",
+    "titulo": "MÁS ALLÁ DE PROFESIONAL Y PACIENTE",
+    "texto": "Queremos formar un vínculo fuera de lo profesional, cuando mejor se conoce a las personas es en un ambiente cálido y acojedor"
+  }
+]

@@ -1,0 +1,49 @@
+{
+  "email": "info@vitalitty.es",
+  "telefonos": [
+    {
+      "area": "Nutrición",
+      "texto": "690 071 950",
+      "tel": "690071950"
+    },
+    {
+      "area": "Fisioterapia",
+      "texto": "696 935 914",
+      "tel": "696935914"
+    }
+  ],
+  "direcciones": [
+    {
+      "area": "Nutrición",
+      "calle": "Calle Mayor Alta, 40",
+      "localidad": "Perales de Tajuña"
+    },
+    {
+      "area": "Fisioterapia",
+      "calle": "Calle Lazareto.",
+      "localidad": "Perales de Tajuña"
+    }
+  ],
+  "direccionPostal": [
+    "Calle Mayor Alta, 40.",
+    "Perales de Tajuña, 28540, Madrid."
+  ],
+  "horario": [
+    {
+      "dias": "Lunes a Viernes",
+      "horas": ["9:00 am – 14:00 pm", "16:30 pm - 21:00 pm"]
+    },
+    {
+      "dias": "Sábado",
+      "horas": ["9:30 am – 14:00 pm"]
+    },
+    {
+      "dias": "Domingo",
+      "horas": ["Cerrado"]
+    }
+  ],
+  "mapa": {
+    "embed": "https://www.openstreetmap.org/export/embed.html?bbox=-3.3625%2C40.2335%2C-3.3425%2C40.2435&layer=mapnik&marker=40.2385%2C-3.3525",
+    "enlace": "https://www.openstreetmap.org/?mlat=40.2385&mlon=-3.3525#map=16/40.2385/-3.3525"
+  }
+}

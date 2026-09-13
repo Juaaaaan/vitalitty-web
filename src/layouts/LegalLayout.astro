@@ -1,0 +1,32 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  /** ISO date of the last review of the text. */
+  updated: string;
+}
+
+const { title, description, updated } = Astro.props;
+const updatedLabel = new Intl.DateTimeFormat('es-ES', {
+  dateStyle: 'long',
+}).format(new Date(updated));
+---
+
+<BaseLayout
+  title={`${title} | Vitalitty`}
+  description={description}
+  twitterCard="summary"
+>
+  <PageHeader title={title} />
+  <article class="mx-auto max-w-[760px] px-4 pb-16">
+    <p class="text-sm text-text-muted">
+      Última actualización: <time datetime={updated}>{updatedLabel}</time>
+    </p>
+    <div class="prose-content mt-6">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
