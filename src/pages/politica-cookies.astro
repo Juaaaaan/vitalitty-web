@@ -1,0 +1,82 @@
+---
+import LegalLayout from '../layouts/LegalLayout.astro';
+---
+
+<LegalLayout
+  title="Política de cookies"
+  description="Qué cookies y tecnologías similares utiliza vitalitty.es y cómo gestionar tus preferencias."
+  updated="2026-09-13"
+>
+  <h2>1. Qué son las cookies</h2>
+  <p>
+    Las cookies son pequeños archivos que un sitio web guarda en tu navegador.
+    Esta política también cubre tecnologías similares, como el almacenamiento
+    local del navegador (<em>localStorage</em>).
+  </p>
+
+  <h2>2. Cookies que utiliza este sitio</h2>
+  <p>
+    <strong
+      >vitalitty.es no utiliza cookies de análisis, de publicidad ni de redes
+      sociales.</strong
+    > Solo se usan las siguientes, necesarias para el funcionamiento del sitio y exentas
+    de consentimiento según el art. 22.2 de la LSSI-CE:
+  </p>
+  <div class="overflow-x-auto">
+    <table class="w-full border-collapse text-left text-sm">
+      <thead>
+        <tr class="border-b border-text-muted">
+          <th scope="col" class="py-2 pr-4">Nombre</th>
+          <th scope="col" class="py-2 pr-4">Proveedor</th>
+          <th scope="col" class="py-2 pr-4">Finalidad</th>
+          <th scope="col" class="py-2">Duración</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-b border-border">
+          <td class="py-2 pr-4"><code>cookies-accepted</code> (localStorage)</td
+          >
+          <td class="py-2 pr-4">vitalitty.es (propia)</td>
+          <td class="py-2 pr-4">Recordar tu elección en el aviso de cookies</td>
+          <td class="py-2">Hasta que borres los datos del navegador</td>
+        </tr>
+        <tr class="border-b border-border">
+          <td class="py-2 pr-4">Cloudflare Turnstile</td>
+          <td class="py-2 pr-4">Cloudflare, Inc. (tercero)</td>
+          <td class="py-2 pr-4">
+            Verificación anti-spam, solo en las páginas con formulario. Puede
+            usar almacenamiento técnico durante la verificación
+          </td>
+          <td class="py-2">Sesión</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    Los mapas de ubicación se sirven desde OpenStreetMap, que no instala cookies
+    de seguimiento. Los enlaces a Instagram, TikTok, YouTube y Facebook son
+    enlaces simples: esas redes solo pueden instalar cookies si visitas su web.
+  </p>
+
+  <h2>3. Gestionar tus preferencias</h2>
+  <p>
+    Puedes cambiar tu elección en cualquier momento:{' '}
+    <button
+      type="button"
+      data-cookie-settings
+      class="underline hover:text-primary-dark focus-visible:outline-2 focus-visible:outline-primary-dark"
+      >abrir la configuración de cookies</button
+    >.
+  </p>
+  <p>
+    También puedes bloquear o eliminar cookies desde la configuración de tu
+    navegador (Chrome, Firefox, Safari, Edge…). Bloquear el almacenamiento
+    técnico puede impedir el envío de los formularios.
+  </p>
+
+  <h2>4. Cambios en esta política</h2>
+  <p>
+    Si en el futuro se incorporan cookies de análisis u otras no necesarias, se
+    actualizará esta política y se solicitará tu consentimiento previo.
+  </p>
+</LegalLayout>
