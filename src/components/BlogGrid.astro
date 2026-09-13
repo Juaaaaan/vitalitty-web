@@ -1,0 +1,35 @@
+---
+import BlogCard from './BlogCard.astro';
+import type { Post } from '../lib/blog';
+
+interface Props {
+  posts: Post[];
+}
+
+const { posts } = Astro.props;
+---
+
+<section class="mx-auto max-w-[980px] px-4 py-10">
+  <p
+    data-search-status
+    role="status"
+    aria-live="polite"
+    class="mb-4 text-sm empty:hidden"
+  >
+  </p>
+  {
+    posts.length ? (
+      <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {posts.map((post, i) => (
+          <li class="relative">
+            <BlogCard post={post} eager={i < 3} />
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="py-16 text-center text-text-muted">
+        Aún no hay posts en esta categoría.
+      </p>
+    )
+  }
+</section>

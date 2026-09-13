@@ -98,10 +98,10 @@
 
 ### Implementation for User Story 4
 
-- [X] T030 [US4] Verify all SEO meta tags on every page match Wix original (title, description, OG, Twitter Card) — audit and fix any discrepancies in BaseLayout props usage
-- [X] T031 [US4] Configure @astrojs/sitemap in astro.config.mjs with site URL and verify sitemap.xml includes all public routes
-- [X] T032 [US4] Verify vercel.json rewrites work: /copia-de-nutrición → 200, /blog/categories/sabías-qué → 200 — _@astrojs/vercel emite Build Output API sin los rewrites de vercel.json: se sustituyen por rutas acentuadas nativas (getStaticPaths) + 301 desde la variante sin acento (astro.config `redirects`)_
-- [X] T033 [US4] Run linkinator or similar link checker on build output — fix any broken links
+- [x] T030 [US4] Verify all SEO meta tags on every page match Wix original (title, description, OG, Twitter Card) — audit and fix any discrepancies in BaseLayout props usage
+- [x] T031 [US4] Configure @astrojs/sitemap in astro.config.mjs with site URL and verify sitemap.xml includes all public routes
+- [x] T032 [US4] Verify vercel.json rewrites work: /copia-de-nutrición → 200, /blog/categories/sabías-qué → 200 — _@astrojs/vercel emite Build Output API sin los rewrites de vercel.json: se sustituyen por rutas acentuadas nativas (getStaticPaths) + 301 desde la variante sin acento (astro.config `redirects`)_
+- [x] T033 [US4] Run linkinator or similar link checker on build output — fix any broken links
 
 **Checkpoint**: 0 broken links. All Wix URLs resolve. Sitemap complete. Meta tags match.
 
@@ -115,12 +115,12 @@
 
 ### Implementation for User Story 3
 
-- [ ] T034 [US3] Create content collection config in src/content/config.ts — blog collection schema: title, slug, category (enum), date, description, image?, author?
-- [ ] T035 [US3] Migrate 13 blog posts from Wix to src/content/blog/*.mdx — copy content literal, fill frontmatter (title, slug, category, date, description, image)
-- [ ] T036 [P] [US3] Create BlogCard component in src/components/BlogCard.astro — props: post (title, slug, category, date, description, image)
-- [ ] T037 [US3] Create Blog listing page in src/pages/blog/index.astro — BlogCard list, category filter links, client-side search input. SEO meta.
-- [ ] T038 [US3] Create Blog category page in src/pages/blog/categories/[categoria].astro — getStaticPaths for 4 categories, filtered BlogCard list. SEO meta.
-- [ ] T039 [US3] Create Post detail page in src/pages/post/[slug].astro — render MDX content, SEO meta per post frontmatter
+- [x] T034 [US3] Create content collection config in src/content/config.ts — blog collection schema: title, slug, category (enum), date, description, image?, author?
+- [x] T035 [US3] Migrate 13 blog posts from Wix to src/content/blog/*.mdx — copy content literal, fill frontmatter (title, slug, category, date, description, image)
+- [x] T036 [P] [US3] Create BlogCard component in src/components/BlogCard.astro — props: post (title, slug, category, date, description, image)
+- [x] T037 [US3] Create Blog listing page in src/pages/blog/index.astro — BlogCard list, category filter links, client-side search input. SEO meta.
+- [x] T038 [US3] Create Blog category page in src/pages/blog/categories/[categoria].astro — getStaticPaths for 4 categories, filtered BlogCard list. SEO meta.
+- [x] T039 [US3] Create Post detail page in src/pages/post/[slug].astro — render MDX content, SEO meta per post frontmatter
 
 **Checkpoint**: 13 posts visible. Categories filter correctly. Search works. Post content matches Wix.
 
