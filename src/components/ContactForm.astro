@@ -33,7 +33,7 @@ const labelClass = 'block text-sm text-text-muted';
     title && (
       <h2
         id={`${uid}-title`}
-        class="mb-8 text-center font-heading text-2xl font-normal"
+        class="mb-8 text-center font-heading text-2xl font-light"
       >
         {title}
       </h2>
@@ -143,7 +143,8 @@ const labelClass = 'block text-sm text-text-muted';
       <label for={`${uid}-consentimiento`} class="text-sm leading-relaxed">
         He leído y acepto la <a
           href="/politica-privacidad"
-          class="underline hover:text-primary-dark">política de privacidad</a
+          class="font-semibold underline hover:text-primary-dark"
+          >política de privacidad</a
         >. Los datos se usarán únicamente para responder a tu consulta.
       </label>
     </div>
@@ -165,8 +166,9 @@ const labelClass = 'block text-sm text-text-muted';
   <noscript>
     <p class="mx-auto mt-4 max-w-[440px] text-sm">
       Para enviar el formulario necesitas activar JavaScript. También puedes
-      escribirnos a <a href="mailto:info@vitalitty.es" class="underline"
-        >info@vitalitty.es</a
+      escribirnos a <a
+        href="mailto:info@vitalitty.es"
+        class="font-semibold underline">info@vitalitty.es</a
       >.
     </p>
   </noscript>

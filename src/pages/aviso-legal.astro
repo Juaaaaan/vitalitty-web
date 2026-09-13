@@ -1,6 +1,5 @@
 ---
 import LegalLayout from '../layouts/LegalLayout.astro';
-import Pendiente from '../components/Pendiente.astro';
 import contacto from '../data/contacto.json';
 ---
 
@@ -16,14 +15,11 @@ import contacto from '../data/contacto.json';
     (LSSI-CE), se informa de los datos del titular de este sitio web:
   </p>
   <ul>
-    <li>
-      Titular: <Pendiente dato="razón social o nombre completo del titular" />
-    </li>
-    <li>NIF/CIF: <Pendiente dato="NIF/CIF" /></li>
+    <li>Titular: Jesús Arsenio García García</li>
+    <li>NIF/CIF: 50896803B</li>
     <li>Nombre comercial: Vitalitty</li>
     <li>
-      Domicilio: {contacto.direccionPostal.join(' ')}{' '}
-      <Pendiente dato="confirmar domicilio fiscal si es distinto" />
+      Domicilio: {contacto.direccionPostal.join(' ')}
     </li>
     <li>
       Email: <a href={`mailto:${contacto.email}`}>{contacto.email}</a>
@@ -39,12 +35,7 @@ import contacto from '../data/contacto.json';
         ))
       }
     </li>
-    <li>
-      Datos registrales / colegiación profesional:{' '}
-      <Pendiente
-        dato="nº de colegiado de nutrición y fisioterapia, si aplica"
-      />
-    </li>
+    <li>Datos registrales / colegiación profesional: MAD00437</li>
   </ul>
 
   <h2>2. Objeto</h2>

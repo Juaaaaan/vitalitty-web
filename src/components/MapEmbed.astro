@@ -6,21 +6,32 @@ interface Props {
 }
 
 const { class: className } = Astro.props;
+const { lat, lng, zoom, enlace } = contacto.mapa;
 ---
 
-<div class:list={['overflow-hidden bg-bg-alt', className]}>
-  <iframe
-    src={contacto.mapa.embed}
-    title="Mapa de ubicación de Vitalitty en Perales de Tajuña"
-    loading="lazy"
-    referrerpolicy="no-referrer"
-    class="block h-full min-h-[250px] w-full border-0"></iframe>
+<!-- `isolate` keeps Leaflet's internal z-indexes (400–1000) below the sticky header -->
+<div
+  class:list={['isolate flex flex-col overflow-hidden bg-bg-alt', className]}
+>
+  <osm-map
+    class="block min-h-[250px] w-full flex-1"
+    role="region"
+    aria-label="Mapa de ubicación de Vitalitty en Perales de Tajuña"
+    data-lat={lat}
+    data-lng={lng}
+    data-zoom={zoom}
+    data-label="Vitalitty"></osm-map>
   <p class="px-2 py-1 text-right text-xs">
     <a
-      href={contacto.mapa.enlace}
+      href={enlace}
       target="_blank"
       rel="noopener noreferrer"
-      class="text-text underline hover:text-primary-dark">Ver mapa ampliado</a
+      class="font-semibold text-text underline hover:text-primary-dark"
+      >Ver mapa ampliado</a
     >
   </p>
 </div>
+
+<script>
+  import '../scripts/osm-map';
+</script>

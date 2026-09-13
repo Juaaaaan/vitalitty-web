@@ -29,7 +29,7 @@ const seo = {
     <div class="mx-auto max-w-[800px]">
       <h2
         id="programa-title"
-        class="text-center font-heading text-4xl font-normal"
+        class="text-center font-heading text-4xl font-light"
       >
         {programa.subtitulo}
       </h2>
@@ -38,7 +38,7 @@ const seo = {
         programa.secciones.map((seccion) => (
           <div class="mt-12 grid gap-4 md:grid-cols-[14rem_1fr] md:gap-10">
             <div>
-              <h3 class="font-heading text-lg font-normal">{seccion.titulo}</h3>
+              <h3 class="font-heading text-lg font-light">{seccion.titulo}</h3>
               {seccion.subtitulo && (
                 <p class="mt-1 text-text-muted">{seccion.subtitulo}</p>
               )}
@@ -50,7 +50,7 @@ const seo = {
                 ) : (
                   <p class="mb-6 leading-[1.8]">
                     {parrafo.numero}{' '}
-                    <strong class="font-semibold text-text">
+                    <strong class="font-medium text-text">
                       {parrafo.negrita}
                     </strong>{' '}
                     {parrafo.texto}

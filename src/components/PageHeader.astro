@@ -25,14 +25,14 @@ const { title, id, image } = Astro.props;
           fetchpriority="high"
           class="absolute inset-0 h-full w-full object-cover"
         />
-        <h1 class="relative mx-4 bg-bg/60 px-6 py-4 text-center font-heading text-4xl font-normal tracking-wide text-text md:px-7 md:text-[56px]">
+        <h1 class="relative mx-4 bg-bg/60 px-6 py-4 text-center font-heading text-4xl font-light tracking-wide text-text md:px-7 md:text-[56px]">
           {title}
         </h1>
       </div>
     </section>
   ) : (
     <section class="px-4 pt-12 pb-8 md:pt-16" id={id}>
-      <h1 class="text-center font-heading text-4xl font-normal tracking-wide text-text md:text-[56px]">
+      <h1 class="text-center font-heading text-4xl font-light tracking-wide text-text md:text-[56px]">
         {title}
       </h1>
     </section>
