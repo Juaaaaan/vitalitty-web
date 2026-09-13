@@ -79,12 +79,12 @@
 
 ### Implementation for User Story 2
 
-- [ ] T025 [US2] Create ContactForm component in src/components/ContactForm.astro — fields: nombre, email, telefono, mensaje, consentimiento checkbox (links to /politica-privacidad), honeypot (_honey hidden), Turnstile widget. Props: origen string. Client-side validation + Turnstile script (client:load island).
-- [ ] T026 [US2] Create API endpoint in src/pages/api/contact.ts — per contracts/api-contact.md: honeypot check → Turnstile verify → input validation → Resend send. Env vars: RESEND_API_KEY, TURNSTILE_SECRET_KEY, CONTACT_TO_EMAIL.
-- [ ] T027 [P] [US2] Add ContactForm (origen="nutricion") to src/pages/nutricion.astro
-- [ ] T028 [P] [US2] Add ContactForm (origen="fisioterapia") to src/pages/fisioterapia.astro
-- [ ] T029 [P] [US2] Add ContactForm (origen="contacto") to src/pages/contacto.astro
-- [ ] T029b [P] [US2] Add ContactForm (origen="colaboraciones") to src/pages/colaboraciones.astro
+- [x] T025 [US2] Create ContactForm component in src/components/ContactForm.astro — fields: nombre, email, telefono, mensaje, consentimiento checkbox (links to /politica-privacidad), honeypot (_honey hidden), Turnstile widget. Props: origen string. Client-side validation + Turnstile script (client:load island).
+- [x] T026 [US2] Create API endpoint in src/pages/api/contact.ts — per contracts/api-contact.md: honeypot check → Turnstile verify → input validation → Resend send. Env vars: RESEND_API_KEY, TURNSTILE_SECRET_KEY, CONTACT_TO_EMAIL.
+- [x] T027 [P] [US2] Add ContactForm (origen="nutricion") to src/pages/nutricion.astro
+- [x] T028 [P] [US2] Add ContactForm (origen="fisioterapia") to src/pages/fisioterapia.astro
+- [x] T029 [P] [US2] Add ContactForm (origen="contacto") to src/pages/contacto.astro
+- [ ] T029b [P] [US2] Add ContactForm (origen="colaboraciones") to src/pages/colaboraciones.astro — _se completa en Fase 8 junto a T046, cuando exista la página_
 
 **Checkpoint**: Forms submit on all 4 pages, email arrives with correct origen, anti-spam rejects bots, RGPD checkbox enforced.
 

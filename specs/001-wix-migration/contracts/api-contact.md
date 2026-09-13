@@ -10,22 +10,24 @@
 
 ### Body
 
-| Field | Type | Required | Notes |
-|-------|------|----------|-------|
-| nombre | string | yes | Nombre del remitente. Max 100 chars. |
-| email | string | yes | Email válido del remitente. |
-| telefono | string | no | Teléfono de contacto. Max 20 chars. |
-| mensaje | string | yes | Cuerpo del mensaje. Max 2000 chars. |
-| origen | string | yes | Página de origen: `contacto` \| `nutricion` \| `fisioterapia` \| `colaboraciones` |
-| consentimiento | boolean | yes | Checkbox RGPD. MUST be `true`. |
-| turnstile_token | string | yes | Token de Cloudflare Turnstile. |
-| _honey | string | no | Honeypot field. Must be empty. |
+| Field           | Type    | Required | Notes                                                                             |
+| --------------- | ------- | -------- | --------------------------------------------------------------------------------- |
+| nombre          | string  | yes      | Nombre del remitente. Max 100 chars.                                              |
+| apellido        | string  | no       | Primer apellido (campo del formulario Wix original). Max 100 chars.               |
+| email           | string  | yes      | Email válido del remitente.                                                       |
+| telefono        | string  | no       | Teléfono de contacto. Max 20 chars.                                               |
+| mensaje         | string  | yes      | Cuerpo del mensaje. Max 2000 chars.                                               |
+| origen          | string  | yes      | Página de origen: `contacto` \| `nutricion` \| `fisioterapia` \| `colaboraciones` |
+| consentimiento  | boolean | yes      | Checkbox RGPD. MUST be `true`.                                                    |
+| turnstile_token | string  | yes      | Token de Cloudflare Turnstile.                                                    |
+| _honey          | string  | no       | Honeypot field. Must be empty.                                                    |
 
 ### Example
 
 ```json
 {
-  "nombre": "María López",
+  "nombre": "María",
+  "apellido": "López",
   "email": "maria@example.com",
   "telefono": "612345678",
   "mensaje": "Me gustaría pedir cita para nutrición.",
@@ -90,12 +92,13 @@ Resend API failure.
 
 ## Environment Variables
 
-| Variable | Description |
-|----------|-------------|
-| RESEND_API_KEY | API key for Resend email service |
-| TURNSTILE_SECRET_KEY | Cloudflare Turnstile server-side secret |
-| TURNSTILE_SITE_KEY | Cloudflare Turnstile client-side site key (used in frontend) |
-| CONTACT_TO_EMAIL | Destination email address for form submissions |
+| Variable             | Description                                                                     |
+| -------------------- | ------------------------------------------------------------------------------- |
+| RESEND_API_KEY       | API key for Resend email service                                                |
+| TURNSTILE_SECRET_KEY | Cloudflare Turnstile server-side secret                                         |
+| TURNSTILE_SITE_KEY   | Cloudflare Turnstile client-side site key (used in frontend)                    |
+| CONTACT_TO_EMAIL     | Destination email address for form submissions                                  |
+| CONTACT_FROM_EMAIL   | Optional. Sender on a Resend-verified domain. Defaults to Resend sandbox sender |
 
 ## Email Template
 
