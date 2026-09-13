@@ -32,10 +32,9 @@ class OsmMap extends HTMLElement {
   }
 
   private async render() {
-    const [{ default: L }] = await Promise.all([
-      import('leaflet'),
-      import('leaflet/dist/leaflet.css'),
-    ]);
+    // Leaflet CSS is imported statically in MapEmbed.astro: a dynamic CSS
+    // import here produced a preload reference to a file Vite never emitted.
+    const { default: L } = await import('leaflet');
 
     const lat = Number(this.dataset.lat);
     const lng = Number(this.dataset.lng);
