@@ -1,0 +1,31 @@
+---
+/**
+ * Decorative looping video placed over a fallback background image.
+ * It stays invisible until it is actually playing (see src/scripts/bg-video.ts),
+ * so the image shows whenever the video cannot load or play.
+ */
+interface Props {
+  src: string;
+}
+
+const { src } = Astro.props;
+---
+
+<video
+  data-bg-video
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="none"
+  aria-hidden="true"
+  tabindex="-1"
+  disablepictureinpicture
+  class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-700 data-[ready]:opacity-100 motion-reduce:hidden"
+>
+  <source src={src} type="video/mp4" />
+</video>
+
+<script>
+  import '../scripts/bg-video';
+</script>

@@ -43,7 +43,9 @@
     }
   ],
   "mapa": {
-    "embed": "https://www.openstreetmap.org/export/embed.html?bbox=-3.3625%2C40.2335%2C-3.3425%2C40.2435&layer=mapnik&marker=40.2385%2C-3.3525",
+    "lat": 40.2385,
+    "lng": -3.3525,
+    "zoom": 16,
     "enlace": "https://www.openstreetmap.org/?mlat=40.2385&mlon=-3.3525#map=16/40.2385/-3.3525"
   }
 }

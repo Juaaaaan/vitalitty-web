@@ -112,6 +112,7 @@
     font-size: 1.375rem;
   }
   .prose-content a {
+    font-weight: 600;
     text-decoration: underline;
   }
   .prose-content a:hover {

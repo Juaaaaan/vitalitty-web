@@ -36,7 +36,7 @@ const icono = servicio.icono ? resolveImage(servicio.icono) : undefined;
         />
       ))
   }
-  <h2 class="mt-5 font-heading text-xl font-normal text-text">
+  <h2 class="mt-5 font-heading text-xl font-light text-text">
     {servicio.nombre}
   </h2>
   <p class="mt-4 text-base leading-[1.8] text-text">{servicio.descripcion}</p>
@@ -52,7 +52,7 @@ const icono = servicio.icono ? resolveImage(servicio.icono) : undefined;
       <p class="mt-2 text-base leading-[1.8]">
         <a
           href={servicio.enlace}
-          class="font-bold text-text underline transition-colors hover:text-primary-dark"
+          class="font-semibold text-text underline transition-colors hover:text-primary-dark"
         >
           {servicio.enlaceTexto ?? 'Saber más'}
           <span class="sr-only"> sobre {servicio.nombre}</span>
